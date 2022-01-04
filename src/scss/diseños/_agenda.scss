@@ -1,10 +1,13 @@
 .agenda{
-    border: 1px solid black;
+    border: 1px solid $gris;
+    background-color: $blanco-gris;
     padding: 2rem 4rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
+    
 
     .campo{
         display: flex;
@@ -13,14 +16,16 @@
 }
 
 .citas{
-    border: 1px solid black;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    border: 1px solid $gris;
+    background-color: $blanco-gris;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     table{
+        background-color: $blanco;
         width: 98%;
         margin: 2rem auto;
         th,td{
-            border: 1px solid black;
+            border: 1px solid $gris;
             text-align: center;
         }
     }

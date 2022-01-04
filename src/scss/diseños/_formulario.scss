@@ -3,10 +3,11 @@
 
 //cargar inmueble
 .formulario{
-    padding: 2rem 1rem;
+    padding: 0 1rem;
     fieldset{
+        background-color: $blanco-gris;
         border-radius: 0.5rem;
-        margin-top: 2rem;
+        margin-top: 1rem;
         display: flex;
         flex-direction: column;
         legend{
@@ -15,13 +16,14 @@
         input{
             padding: 0.5rem 0;
         }
+        label,input{
+            width: 94%;
+            margin: auto;
+        }
     }
     .opciones{
         display: grid;
         @include grid(2,0.2rem);
-        input,label{
-            display: inline;
-        }
         @include tablet{
             @include grid(4,0.2rem);
         }
