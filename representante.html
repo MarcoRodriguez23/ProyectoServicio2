@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="build/css/app.css">
+    <title>inmobiliaria</title>
+    <a href="index.html">volver</a>
+</head>
+<body>
+    <h1>Nuevo representante</h1>
+    <form action="index.html" class="contenedor formulario contenido-centrado" type="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Información Personal</legend>
+            <label for="nombre">Nombre(s)</label>
+            <input type="text" placeholder="Tu nombre" id="nombre">
+            <label for="apellido">Apellidos</label>
+            <input type="text" placeholder="apellidos" id="apellido">
+            <label for="puesto">Puesto</label>
+            <input type="text" placeholder="Tu puesto" id="puesto">
+        </fieldset>
+
+        <fieldset>
+            <legend>Asignar rol</legend>
+            <label for="rol">Rol</label>
+                <select name="rol" id="rol">
+                    <option value="0" selected disabled>--Seleccione un rol--</option>
+                    <option value="1">rol 1</option>
+                    <option value="2">rol 2</option>
+                    <option value="3">rol 3</option>
+                </select>
+        </fieldset>
+
+        <button type="submit">Crear representante</button>
+    </form>
+</body>
+<script src="build/js/bundle.js"></script>
+</html>

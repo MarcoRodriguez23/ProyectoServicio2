@@ -1,0 +1,34 @@
+// general
+
+
+//cargar inmueble
+.formulario{
+    padding: 2rem 1rem;
+    fieldset{
+        border-radius: 0.5rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        legend{
+            font-weight: $bold;
+        }
+        input{
+            padding: 0.5rem 0;
+        }
+    }
+    .opciones{
+        display: grid;
+        @include grid(2,0.2rem);
+        input,label{
+            display: inline;
+        }
+        @include tablet{
+            @include grid(4,0.2rem);
+        }
+    }
+
+    button{
+        margin: 2rem auto;
+    }
+}
+

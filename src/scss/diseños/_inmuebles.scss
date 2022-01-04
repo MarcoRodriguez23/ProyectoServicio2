@@ -1,0 +1,25 @@
+.inmuebles{
+    @include grid(2,1rem);
+
+    .inmueble{
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 2rem;
+        img{
+            border: 1px solid black;
+            height: 15rem;
+            margin-bottom: 1rem;
+        }
+        .info-inmueble{
+            border: 1px solid black;
+            padding: 0 1rem;
+        }
+
+    }
+
+    @include tablet{
+        @include grid(4,1rem);
+    }
+}

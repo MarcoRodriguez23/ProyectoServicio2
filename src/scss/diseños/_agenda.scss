@@ -1,0 +1,27 @@
+.agenda{
+    border: 1px solid black;
+    padding: 2rem 4rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .campo{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.citas{
+    border: 1px solid black;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    table{
+        width: 98%;
+        margin: 2rem auto;
+        th,td{
+            border: 1px solid black;
+            text-align: center;
+        }
+    }
+}
