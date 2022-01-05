@@ -1,20 +1,92 @@
+.header{
+    background-color: $azul;
+    height: 25vh;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    h1{
+        margin: 0 auto;
+    }
+    .buscador{
+        width: 80%;
+        input{
+            height: 4rem;
+        }
+        text-align: center;
+    }
+}
+
 .inmuebles{
-    @include grid(2,1rem);
+    @include grid(2,2rem);
 
     .inmueble{
         border: 1px solid black;
+        border-radius: 1rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        padding: 2rem;
+        justify-content: space-between;
+        align-items: center;
+        // padding-bottom: 1rem;
         img{
-            border: 1px solid black;
-            height: 15rem;
+            // border: 1px solid black;
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
             margin-bottom: 1rem;
         }
         .info-inmueble{
-            border: 1px solid black;
+            // border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             padding: 0 1rem;
+            #ubicacion,#precio,#pago{
+                margin: 0.4rem auto;
+            }
+            #ubicacion{
+                color: $gris;
+            }
+            #precio{
+                color: $verde;
+            }
+            // #pago{
+                
+            // }
+
+            .beneficios{
+                margin:1rem 0;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                .beneficio{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: auto 0.5rem;
+                    border-right: 1px solid $gris;
+                    &:last-of-type{
+                        border-right: none;
+                    }
+                    img{
+                        height: auto;
+                        width: 40%;
+                        margin: auto;
+                        border-radius: 0;
+                    }
+                    p{
+                        font-size: 1rem;
+                        margin: 0 0.5rem; 
+                    }
+                    // @include tablet{
+                    //     img{
+                    //         width: 3rem;
+                    //     }
+                    // }
+                }
+            }
         }
 
     }
