@@ -1,7 +1,6 @@
 .header{
     background-color: $azul;
     height: 25vh;
-    margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,9 +19,10 @@
 
 .inmuebles{
     @include grid(2,2rem);
+    margin-bottom: 2rem;
 
     .inmueble{
-        border: 1px solid black;
+        border: 2px solid $blanco-gris;
         border-radius: 1rem;
         display: flex;
         flex-direction: column;
