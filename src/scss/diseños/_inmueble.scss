@@ -1,0 +1,71 @@
+.pre-imagenes{
+    @include grid(2,1rem);
+    margin: 2rem 0;
+    
+
+    @include tablet{
+        display: grid;
+        grid-template-columns:  1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        #primer-imagen {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+        a{
+            grid-column: 1/5;
+            text-align: center;
+        }
+            
+    }
+}
+
+.galeria{
+    @include grid(3,2rem);
+    img{
+        width:80%;
+        margin: auto;
+    }
+}
+
+.info-propiedad, .galeria{
+    margin: 2rem auto;
+}
+
+.info-propiedad{
+    padding: 2rem 4rem;
+    h4{
+        text-align: start;
+    }
+    .beneficios{
+        width: 40%;
+        margin: auto;
+        .beneficio{
+            img{
+                width: 50%;
+                height: auto;
+            }
+            p{
+                width: 50%;
+                font-size: 1.4rem;
+            }
+        }
+        
+    }
+}
+
+.ubicacion{
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.datos-propiedad{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
