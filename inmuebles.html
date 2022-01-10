@@ -4,157 +4,211 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="build/css/app.css">
     <title>inmobiliaria</title>
-    <a href="index.html">volver</a>
 </head>
 <body>
-    <header class="header">
-        <h1>Inmuebles en venta</h1>
-        <div class="buscador">
-            &#128270;<input class="buscador" type="search" placeholder="buscar por ciudad, colonia, alcaldía, municipio">
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Panel de administración</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Bienvenido NOMBRE</p>
+                
+                <li>
+                    <a href="representante.html">Crear nuevo trabajador</a>
+                </li>
+                <li>
+                    <a href="vendedor.html">Crear nuevo vendedor</a>
+                </li>
+                <li>
+                    <a href="cargar.html">Crear nuevo inmueble</a>
+                </li>
+            </ul>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="inmuebles.html">Inmuebles</a>
+                </li>
+                <li>
+                    <a href="ganancias.html">Ganancias</a>
+                </li>
+                <li>
+                    <a href="citas.html">Agenda</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Menú</span>
+                    </button>
+                </div>
+            </nav>
+            <!-- <header class="header">
+                <h1>Inmuebles en venta</h1>
+                <div class="buscador">
+                    &#128270;<input class="buscador" type="search" placeholder="buscar por ciudad, colonia, alcaldía, municipio">
+                </div>
+            </header> -->
+            <section>
+                <h4>Filtrar</h4>
+                <form action="" method="post" class="contenedor filtro">
+                    <select name="ubicacion" id="ubicacion">
+                        <option value="" selected disabled>Ubicación</option>
+                        <option value="ubicacion-1">Ubicación X</option>
+                        <option value="ubicacion-2">Ubicación X</option>
+                    </select>
+                    <select name="precio" id="precio">
+                        <option value="" selected disabled>Precio</option>
+                        <option value="precio-1">precio 1</option>
+                        <option value="precio-2">precio 2</option>
+                    </select>
+                    <select name="pago" id="pago">
+                        <option value="" selected disabled>Tipo de pago</option>
+                        <option value="pago-1">Forma de pago 1</option>
+                        <option value="pago-2">Forma de pago 2</option>
+                    </select>
+                    <select name="habitacion" id="habitacion">
+                        <option value="" selected disabled>Habitaciones</option>
+                        <option value="habitacion-1">1</option>
+                        <option value="habitacion-2">2</option>
+                    </select>
+                    <select name="wc" id="wc">
+                        <option value="" selected disabled>Baños</option>
+                        <option value="wc-1">1</option>
+                        <option value="wc-2">2</option>
+                    </select>
+                    <button type="submit">Buscar</button>
+                </form>
+            </section>
+            <main>
+                <div class="inmuebles contenedor">
+                    <a href="inmueble.html">
+                        <div class="inmueble">
+                            <img src="build/img/1.jpg" alt="foto del inmueble">
+                            <div class="info-inmueble">
+                                <p id="ubicacion">Calle, Colonia, Delegación</p>
+                                <p id="precio" class="precio">Precio</p>
+                                <p id="pago">Forma de pago</p>
+                                <div class="beneficios">
+                                    <div class="beneficio">
+                                        <img src="build/img/icono_dormitorio.svg" alt="beneficio1">
+                                        <p>4 rec</p>
+                                    </div>
+                                    <div class="beneficio">
+                                        <img src="build/img/icono_estacionamiento.svg" alt="beneficio1">
+                                        <p>2 est</p>
+                                    </div>
+                                    <div class="beneficio">
+                                        <img src="build/img/medida.svg" alt="beneficio1">
+                                        <p>72 m2</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </a>
+                    <a href="inmueble.html">
+                        <div class="inmueble">
+                            <img src="build/img/1.jpg" alt="foto del inmueble">
+                            <div class="info-inmueble">
+                                <p id="ubicacion">Calle, Colonia, Delegación</p>
+                                <p id="precio" class="precio">Precio</p>
+                                <p id="pago">Forma de pago</p>
+                                <div class="beneficios">
+                                    <div class="beneficio">
+                                        <img src="build/img/icono_dormitorio.svg" alt="beneficio1">
+                                        <p>4 rec</p>
+                                    </div>
+                                    <div class="beneficio">
+                                        <img src="build/img/icono_estacionamiento.svg" alt="beneficio1">
+                                        <p>2 est</p>
+                                    </div>
+                                    <div class="beneficio">
+                                        <img src="build/img/medida.svg" alt="beneficio1">
+                                        <p>72 m2</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </a>
+                    <a href="inmueble.html">
+                        <div class="inmueble">
+                            <img src="build/img/1.jpg" alt="foto del inmueble">
+                            <div class="info-inmueble">
+                                <p id="ubicacion">Calle, Colonia, Delegación</p>
+                                <p id="precio" class="precio">Precio</p>
+                                <p id="pago">Forma de pago</p>
+                                <div class="beneficios">
+                                    <div class="beneficio">
+                                        <img src="build/img/icono_dormitorio.svg" alt="beneficio1">
+                                        <p>4 rec</p>
+                                    </div>
+                                    <div class="beneficio">
+                                        <img src="build/img/icono_estacionamiento.svg" alt="beneficio1">
+                                        <p>2 est</p>
+                                    </div>
+                                    <div class="beneficio">
+                                        <img src="build/img/medida.svg" alt="beneficio1">
+                                        <p>72 m2</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </a>
+                    <a href="inmueble.html">
+                        <div class="inmueble">
+                            <img src="build/img/1.jpg" alt="foto del inmueble">
+                            <div class="info-inmueble">
+                                <p id="ubicacion">Calle, Colonia, Delegación</p>
+                                <p id="precio" class="precio">Precio</p>
+                                <p id="pago">Forma de pago</p>
+                                <div class="beneficios">
+                                    <div class="beneficio">
+                                        <img src="build/img/icono_dormitorio.svg" alt="beneficio1">
+                                        <p>4 rec</p>
+                                    </div>
+                                    <div class="beneficio">
+                                        <img src="build/img/icono_estacionamiento.svg" alt="beneficio1">
+                                        <p>2 est</p>
+                                    </div>
+                                    <div class="beneficio">
+                                        <img src="build/img/medida.svg" alt="beneficio1">
+                                        <p>72 m2</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </main>
         </div>
-    </header>
-    <section>
-        <h4>Filtrar</h4>
-        <form action="" method="post" class="contenedor filtro">
-            <select name="ubicacion" id="ubicacion">
-                <option value="" selected disabled>Ubicación</option>
-                <option value="ubicacion-1">Ubicación X</option>
-                <option value="ubicacion-2">Ubicación X</option>
-            </select>
-            <select name="precio" id="precio">
-                <option value="" selected disabled>Precio</option>
-                <option value="precio-1">precio 1</option>
-                <option value="precio-2">precio 2</option>
-            </select>
-            <select name="pago" id="pago">
-                <option value="" selected disabled>Tipo de pago</option>
-                <option value="pago-1">Forma de pago 1</option>
-                <option value="pago-2">Forma de pago 2</option>
-            </select>
-            <select name="habitacion" id="habitacion">
-                <option value="" selected disabled>Habitaciones</option>
-                <option value="habitacion-1">1</option>
-                <option value="habitacion-2">2</option>
-            </select>
-            <select name="wc" id="wc">
-                <option value="" selected disabled>Baños</option>
-                <option value="wc-1">1</option>
-                <option value="wc-2">2</option>
-            </select>
-            <button type="submit">Buscar</button>
-        </form>
-    </section>
-    <main>
-        <div class="inmuebles contenedor">
-            <a href="inmueble.html">
-                <div class="inmueble">
-                    <img src="build/img/1.jpg" alt="foto del inmueble">
-                    <div class="info-inmueble">
-                        <p id="ubicacion">Calle, Colonia, Delegación</p>
-                        <p id="precio" class="precio">Precio</p>
-                        <p id="pago">Forma de pago</p>
-                        <div class="beneficios">
-                            <div class="beneficio">
-                                <img src="build/img/icono_dormitorio.svg" alt="beneficio1">
-                                <p>4 rec</p>
-                            </div>
-                            <div class="beneficio">
-                                <img src="build/img/icono_estacionamiento.svg" alt="beneficio1">
-                                <p>2 est</p>
-                            </div>
-                            <div class="beneficio">
-                                <img src="build/img/medida.svg" alt="beneficio1">
-                                <p>72 m2</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </a>
-            <a href="inmueble.html">
-                <div class="inmueble">
-                    <img src="build/img/1.jpg" alt="foto del inmueble">
-                    <div class="info-inmueble">
-                        <p id="ubicacion">Calle, Colonia, Delegación</p>
-                        <p id="precio" class="precio">Precio</p>
-                        <p id="pago">Forma de pago</p>
-                        <div class="beneficios">
-                            <div class="beneficio">
-                                <img src="build/img/icono_dormitorio.svg" alt="beneficio1">
-                                <p>4 rec</p>
-                            </div>
-                            <div class="beneficio">
-                                <img src="build/img/icono_estacionamiento.svg" alt="beneficio1">
-                                <p>2 est</p>
-                            </div>
-                            <div class="beneficio">
-                                <img src="build/img/medida.svg" alt="beneficio1">
-                                <p>72 m2</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </a>
-            <a href="inmueble.html">
-                <div class="inmueble">
-                    <img src="build/img/1.jpg" alt="foto del inmueble">
-                    <div class="info-inmueble">
-                        <p id="ubicacion">Calle, Colonia, Delegación</p>
-                        <p id="precio" class="precio">Precio</p>
-                        <p id="pago">Forma de pago</p>
-                        <div class="beneficios">
-                            <div class="beneficio">
-                                <img src="build/img/icono_dormitorio.svg" alt="beneficio1">
-                                <p>4 rec</p>
-                            </div>
-                            <div class="beneficio">
-                                <img src="build/img/icono_estacionamiento.svg" alt="beneficio1">
-                                <p>2 est</p>
-                            </div>
-                            <div class="beneficio">
-                                <img src="build/img/medida.svg" alt="beneficio1">
-                                <p>72 m2</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </a>
-            <a href="inmueble.html">
-                <div class="inmueble">
-                    <img src="build/img/1.jpg" alt="foto del inmueble">
-                    <div class="info-inmueble">
-                        <p id="ubicacion">Calle, Colonia, Delegación</p>
-                        <p id="precio" class="precio">Precio</p>
-                        <p id="pago">Forma de pago</p>
-                        <div class="beneficios">
-                            <div class="beneficio">
-                                <img src="build/img/icono_dormitorio.svg" alt="beneficio1">
-                                <p>4 rec</p>
-                            </div>
-                            <div class="beneficio">
-                                <img src="build/img/icono_estacionamiento.svg" alt="beneficio1">
-                                <p>2 est</p>
-                            </div>
-                            <div class="beneficio">
-                                <img src="build/img/medida.svg" alt="beneficio1">
-                                <p>72 m2</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </a>
-        </div>
-    </main>
-    <footer>
-        <h4>pie de pagina</h4>
-    </footer>
-    
+    </div>
     
 </body>
 <script src="build/js/bundle.js"></script>
+<!-- jQuery CDN - Slim version (=without AJAX)-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+</script>
 </html>
