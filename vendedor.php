@@ -31,7 +31,7 @@
             </ul>
             <ul class="list-unstyled components">
                 <li>
-                    <a href="inmuebles.html">Inmuebles</a>
+                    <a href="inmuebles.php">Inmuebles</a>
                 </li>
                 <li>
                     <a href="ganancias.html">Ganancias</a>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="build/css/app.css">
     <title>inmobiliaria</title>
-    <a href="inmuebles.html">volver</a>
+    <a href="inmuebles.php">volver</a>
 </head>
 <body>
     <header>

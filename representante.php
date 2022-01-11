@@ -1,56 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="build/css/app.css">
-    <title>inmobiliaria</title>
-</head>
-<body>
-    <div class="wrapper">
-        <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Panel de administración</h3>
-            </div>
-
-            <ul class="list-unstyled components">
-                <p>Bienvenido NOMBRE</p>
-                
-                <li>
-                    <a href="representante.html">Crear nuevo trabajador</a>
-                </li>
-                <li>
-                    <a href="vendedor.html">Crear nuevo vendedor</a>
-                </li>
-                <li>
-                    <a href="cargar.html">Crear nuevo inmueble</a>
-                </li>
-            </ul>
-            <ul class="list-unstyled components">
-                <li>
-                    <a href="inmuebles.html">Inmuebles</a>
-                </li>
-                <li>
-                    <a href="ganancias.html">Ganancias</a>
-                </li>
-                <li>
-                    <a href="citas.html">Agenda</a>
-                </li>
-            </ul>
-        </nav>
-        <main id="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Menú</span>
-                    </button>
-                </div>
-            </nav>
+<?php
+    require 'templates/header.php';
+?>
+            <a href="representantes.php" class="boton">Nuevo represenante</a>
             <h1>Nuevo representante</h1>
             <form action="index.html" class="contenedor formulario contenido-centrado" type="POST" enctype="multipart/form-data">
                 <fieldset>

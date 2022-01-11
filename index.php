@@ -8,7 +8,7 @@
     <title>inmobiliaria</title>
     <a href="cargar.html">cargar</a>
     <a href="representante.html">representante</a>
-    <a href="inmuebles.html">inmuebles</a>
+    <a href="inmuebles.php">inmuebles</a>
     <a href="pago.html">pago</a>
     <a href="agenda.html">agenda</a>
 

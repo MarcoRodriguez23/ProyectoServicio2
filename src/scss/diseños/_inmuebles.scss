@@ -47,17 +47,19 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 0 1rem;
-            #ubicacion,#precio,#pago{
-                margin: 0.4rem auto;
+            padding: 0 0.5rem;
+            .ubicacion,.precio,.pago,.estado{
+                margin: 0 auto;
+                text-align: center;
+                font-size: 1.4rem;
             }
-            #ubicacion{
+            .ubicacion{
                 color: $gris;
             }
             
-            // #pago{
-                
-            // }
+            .estado{
+                color: red;
+            }
         }
 
     }
@@ -105,4 +107,8 @@
 
 .precio{
     color: $verde;
+}
+
+.opciones{
+    border: none;
 }
