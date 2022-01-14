@@ -1,12 +1,11 @@
 <?php
     require 'templates/header.php';
 ?>
-
-            <h1>Nuevo vendedor</h1>
-            <div class="contenedor volver">
-                <a href="vendedores.php" class="boton-azul">Volver</a>
-            </div>
-            <form action="index.html" class="contenedor formulario contenido-centrado" type="POST" enctype="multipart/form-data">
+            <h1>Actualizar representante</h1>
+            <div class="volver contenedor">
+                    <a href="representantes.php" class="boton-azul">Volver</a>
+                </div>
+                <form action="index.html" class="contenedor formulario contenido-centrado" type="POST" enctype="multipart/form-data">
                 <fieldset>
                     <legend>Información Personal</legend>
                     <label for="nombre">Nombre(s)</label>
@@ -22,18 +21,23 @@
                 </fieldset>
 
                 <fieldset>
-                    <legend>Credenciales</legend>
-                        <label for="correo">Correo</label>
-                        <input type="email" placeholder="correo@correo.com" id="correo">
-                        <label for="password">Password</label>
-                        <input type="password" placeholder="Password" id="password">
+                    <legend>Asignar rol</legend>
+                    <label for="rol">Rol</label>
+                        <select name="rol" id="rol">
+                            <option value="0" selected disabled>--Seleccione un rol--</option>
+                            <option value="1">rol 1</option>
+                            <option value="2">rol 2</option>
+                            <option value="3">rol 3</option>
+                        </select>
                 </fieldset>
 
-                <button class="boton-azul" type="submit">Crear vendedor</button>
+                <button class="boton-azul" type="submit">Actualizar representante</button>
             </form>
         </main>
-
     </div>
-    
+
+
+
+
 <?php
     require 'templates/footer.php';

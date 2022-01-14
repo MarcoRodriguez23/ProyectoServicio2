@@ -3,9 +3,9 @@
 
 ?>
             <main>
-                <h1>Representantes</h1>
+                <h1>Vendedores</h1>
                 <div class="creacion contenedor">
-                    <a href="representante.php" class="boton-azul">Crear nuevo representante</a>
+                    <a href="vendedor.php" class="boton-azul">Crear nuevo vendedor</a>
                 </div>
                 <div class="trabajadores contenedor">
                     <div class="plantilla">
@@ -14,11 +14,10 @@
                             <p>Edad</p>
                             <p>Residencia</p>
                             <p>Teléfono</p>
-                            <p>Rol</p>
                             <p>Comisión: %</p>
                         </div>
                         <div class="opciones">
-                            <a href="actualizar-representante.php?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
+                            <a href="actualizar-vendedor.php?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
                             <a href="#" class="boton boton-rojo">Eliminar</a>
                         </div>
                     </div>
@@ -28,11 +27,10 @@
                             <p>Edad</p>
                             <p>Residencia</p>
                             <p>Teléfono</p>
-                            <p>Rol</p>
                             <p>Comisión: %</p>
                         </div>
                         <div class="opciones">
-                            <a href="actualizar-representante.php?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
+                            <a href="actualizar-vendedor.php?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
                             <a href="#" class="boton boton-rojo">Eliminar</a>
                         </div>
                     </div>
@@ -42,11 +40,10 @@
                             <p>Edad</p>
                             <p>Residencia</p>
                             <p>Teléfono</p>
-                            <p>Rol</p>
                             <p>Comisión: %</p>
                         </div>
                         <div class="opciones">
-                            <a href="actualizar-representante.php?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
+                            <a href="actualizar-vendedor.php?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
                             <a href="#" class="boton boton-rojo">Eliminar</a>
                         </div>
                     </div>
@@ -56,11 +53,10 @@
                             <p>Edad</p>
                             <p>Residencia</p>
                             <p>Teléfono</p>
-                            <p>Rol</p>
                             <p>Comisión: %</p>
                         </div>
                         <div class="opciones">
-                            <a href="actualizar-representante.php?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
+                            <a href="actualizar-vendedor.php?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
                             <a href="#" class="boton boton-rojo">Eliminar</a>
                         </div>
                     </div>

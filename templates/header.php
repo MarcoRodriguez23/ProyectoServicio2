@@ -23,7 +23,7 @@
                     <a href="representantes.php">Representates</a>
                 </li>
                 <li>
-                    <a href="citas.php">Agenda</a>
+                    <a href="vendedores.php">Vendedores</a>
                 </li>
             </ul>
             <ul class="list-unstyled components">
@@ -34,13 +34,19 @@
                     <a href="citas.php">Agenda</a>
                 </li>
             </ul>
+            <ul class="list-unstyled components">
+                <li>
+                    <a class="boton-amarillo descargar" href="../prueba.txt" download="lista-inmuebles.txt">Descargar lista de inmuebles</a>
+                </li>
+                
+            </ul>
         </nav>
         <div id="content">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Menú</span>
+                        <!-- <i class="fas fa-align-left"></i> -->
+                        <span>&#8592;</span>
                     </button>
                 </div>
             </nav>

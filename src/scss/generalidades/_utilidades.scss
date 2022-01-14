@@ -2,23 +2,50 @@
     max-width: 800px;
 }
 
-.boton{
-    background-color: $azul;
-    border: none;
-    border-radius: 0.5rem;
-    padding:1rem;
-    margin: 0.5rem auto;
-    color: black;
-    font-weight: $bold;
-    display: block;
-    margin: auto;
-    &:hover{
-        cursor: pointer;
-        background-color: blue;
-    }
-}
 .sombra{
     -webkit-box-shadow: 2px 12px 26px 8px rgba(0,0,0,0.1);
     -moz-box-shadow: 2px 12px 26px 8px rgba(0,0,0,0.1);
     box-shadow: 2px 12px 26px 8px rgba(0,0,0,0.1);
+}
+
+.boton-rojo{
+    @include boton($rojo);
+}
+
+.boton-amarillo{
+    @include boton($amarillo);
+}
+
+.boton-azul{
+    @include boton ($azul);
+    color: $blanco;
+}
+
+.boton-verde{
+    @include boton ($verde);
+}
+
+.creacion,.volver{
+    margin-bottom: 2rem;
+    display: flex;
+    
+    .boton-azul{
+        font-size: 1.8rem;
+        width: auto;
+        height: auto;
+        
+    }
+}
+.creacion{
+    justify-content: flex-start;
+}
+.volver{
+    justify-content: flex-start;
+}
+
+.plantilla{
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
 }

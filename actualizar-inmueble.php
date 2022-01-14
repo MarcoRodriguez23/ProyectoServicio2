@@ -1,10 +1,10 @@
 <?php
     require 'templates/header.php';
 ?>
-            <h1>Nuevo inmueble</h1>
+            <h1>Actualizar inmueble</h1>
             <div class="volver contenedor">
                     <a href="inmuebles.php" class="boton-azul">Volver</a>
-            </div>
+                </div>
             <form action="index.html" class="contenedor formulario contenido-centrado" type="POST" enctype="multipart/form-data">
                 <fieldset>
                     <legend>Información General</legend>
@@ -61,10 +61,13 @@
                     </div>
                 </fieldset>
                 
-                <button class="boton-azul" type="submit">subir inmueble</button>
+                <button class="boton-azul" type="submit">Actualizar</button>
             </form>
         </main>
     </div>
-    
+
+
+
+
 <?php
     require 'templates/footer.php';

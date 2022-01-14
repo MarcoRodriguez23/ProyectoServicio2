@@ -48,12 +48,24 @@ a:focus {
     color: #fff;
     transition: all 0.3s;
     ul{
-        a{
-            text-align: center;
+        li{
+            a{
+                text-align: center;
+                padding: 0.4rem;
+                font-size: 0.8em;
+                display: block;
+            }
         }
     }
-    p{
-        text-align: center;
+    @include tablet{
+        ul{
+            li{
+                a{
+                    padding: 1rem;
+                    font-size: 1.6rem;
+                }
+            }
+        }
     }
 }
 
@@ -62,9 +74,8 @@ a:focus {
 }
 
 #sidebar{
-
     .sidebar-header{
-        padding: 10px;
+        padding: 1rem;
         background: #6d7fcc;
         h3{
             font-size: 1.4rem;
@@ -75,23 +86,22 @@ a:focus {
             }
         }
     }
+    ul.components {
+        padding: 1rem 0;
+        border-bottom: 1px solid #47748b;
+    }
 }
 
-#sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #47748b;
-}
+// #sidebar ul p {
+//     color: #fff;
+//     padding: 10px;
+// }
 
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
-}
-
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-}
+// #sidebar ul li a {
+//     padding: 10px;
+//     font-size: 1.1em;
+//     display: block;
+// }
 
 #sidebar ul li a:hover {
     color: #7386D5;
@@ -122,18 +132,6 @@ ul ul a {
     background: #6d7fcc;
 }
 
-ul.CTAs {
-    padding: 20px;
-}
-
-ul.CTAs a {
-    text-align: center;
-    font-size: 0.9em !important;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-
 a.download {
     background: #fff;
     color: #7386D5;
@@ -151,7 +149,7 @@ a.article:hover {
 
 #content {
     width: 100%;
-    padding: 20px;
+    padding: 1rem;
     min-height: 100vh;
     transition: all 0.3s;
 }
@@ -169,5 +167,33 @@ a.article:hover {
     }
     #sidebarCollapse span {
         display: none;
+    }
+}
+
+.btn-info{
+    width: 6rem;
+    height: 4rem;
+    span{
+        font-size: 2rem;
+    }
+    @include tablet{
+        width: 8rem;
+    }
+}
+
+#sidebarCollapse{
+    border-radius: 0.5rem;
+    padding: auto;
+    span{
+        margin: 0;
+        // font-size: 3rem;
+    }
+}
+
+.descargar{
+    height: auto;
+    font-size: 1.6rem;
+    @include tablet{
+        margin: 1rem 2rem;
     }
 }

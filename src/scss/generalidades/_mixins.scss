@@ -22,14 +22,21 @@
     grid-template-columns: repeat($columnas, 1fr);
 }
 
-@mixin boton(){
+@mixin boton($color){
+    background-color: $color;
     border: none;
-    color: $blanco;
+    color: $negro;
+    border-radius: 0.5rem;
     font-weight: $bold;
     text-decoration: none;
-    padding: 1rem 3rem;
+    padding: 0.5rem 1rem;
     text-align: center;
-    margin-top: $separacion / 2;
-    border-radius: 0.5rem;
-    // display: display;
+    font-size: 1.2rem;
+    display: inline;
+    width: auto;
+    height: 3rem;
+    
+    &:hover{
+        cursor: pointer;
+    }
 }

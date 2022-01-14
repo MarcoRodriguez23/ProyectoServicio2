@@ -19,7 +19,6 @@
 
 .inmuebles{
     @include grid(2,2rem);
-    margin-bottom: 2rem;
 
     .inmueble{
         border: 2px solid $blanco-gris;
@@ -110,5 +109,21 @@
 }
 
 .opciones{
-    border: none;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a{
+        margin-top: 0.6rem;
+        width: 60%;
+    }
+
+    @include tablet{
+        flex-direction: row;
+        justify-content: space-evenly;
+        a{
+            flex: 0 0 calc(33% - 0.5rem);
+            text-align: center;
+        }
+    }
 }

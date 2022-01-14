@@ -1,10 +1,9 @@
 <?php
     require 'templates/header.php';
 ?>
-
-            <h1>Nuevo vendedor</h1>
-            <div class="contenedor volver">
-                <a href="vendedores.php" class="boton-azul">Volver</a>
+            <h1>Actualizar vendedor</h1>
+            <div class="volver contenedor">
+                    <a href="vendedores.php" class="boton-azul">Volver</a>
             </div>
             <form action="index.html" class="contenedor formulario contenido-centrado" type="POST" enctype="multipart/form-data">
                 <fieldset>
@@ -21,19 +20,13 @@
                     <input type="number" placeholder="ejem: 5546782345" id="telefono">
                 </fieldset>
 
-                <fieldset>
-                    <legend>Credenciales</legend>
-                        <label for="correo">Correo</label>
-                        <input type="email" placeholder="correo@correo.com" id="correo">
-                        <label for="password">Password</label>
-                        <input type="password" placeholder="Password" id="password">
-                </fieldset>
-
-                <button class="boton-azul" type="submit">Crear vendedor</button>
+                <button class="boton-azul" type="submit">Actualizar vendedor</button>
             </form>
         </main>
-
     </div>
-    
+
+
+
+
 <?php
     require 'templates/footer.php';

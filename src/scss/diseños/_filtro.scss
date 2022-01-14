@@ -1,42 +1,77 @@
+// .filtro{
+//     display: flex;
+//     flex-direction: column;
+//     margin: 2rem auto;
+//     select,button{
+//         font-size: 1.4rem;
+//         width: auto;
+//         margin: 0.5rem auto;
+//         // border: 0.5px solid $gris;
+//         border-radius: 1rem;
+//         border: none;
+//         padding: 0.6rem 0;
+//         text-align: center;
+//         font-weight: $bold;
+//         color: $blanco;
+//         background-color: $azul;
+//         transition: all .3s;
+//         option{
+//             background-color: $blanco;
+//             border: none;
+//             font-size: 1.4rem;
+            
+//         }
+//         &:hover{
+//             cursor: pointer;
+//             color: $negro;
+//         }
+//     }
+//     button{
+//         width: auto;
+//         padding: 1rem 2rem;
+//         font-weight: $regular;
+//     }
+
+//     @include tablet{
+//         flex-direction: row;
+//         select{
+//             margin-right: 2rem;
+//             // width: auto;
+//         }
+        
+//     }
+// }
+
 .filtro{
-    display: flex;
-    flex-direction: column;
     margin: 2rem auto;
     select,button{
-        width: 50%;
+        font-size: 1.4rem;
+        width: auto;
         margin: 0.5rem auto;
         // border: 0.5px solid $gris;
         border-radius: 1rem;
         border: none;
-        padding: 0.8rem 0;
+        padding: 0.6rem 0;
         text-align: center;
+        font-weight: $bold;
+        color: $blanco;
+        background-color: $azul;
+        transition: all .3s;
         option{
             background-color: $blanco;
             border: none;
+            font-size: 1.4rem;
             
         }
         &:hover{
             cursor: pointer;
-            background-color: $azul;
+            color: $negro;
         }
     }
     button{
-        width: auto;
-        padding: 1rem 2rem;
+        width: 6rem;
+        padding: auto 2rem;
         font-weight: $regular;
     }
-
-    @include tablet{
-        flex-direction: row;
-        select{
-            margin-right: 2rem;
-            // width: auto;
-        }
-        
-    }
 }
 
-.icono{
-    width: 4rem;
-    height: auto;
-}
