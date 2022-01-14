@@ -119,7 +119,6 @@
     }
 
     @include tablet{
-        flex-direction: row;
         justify-content: space-evenly;
         a{
             flex: 0 0 calc(33% - 0.5rem);

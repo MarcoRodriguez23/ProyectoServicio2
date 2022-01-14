@@ -11,10 +11,17 @@
         }
         p{
             text-align: center;
-            line-height: 1.5rem;
+            line-height: 1rem;
+            font-size: 1.2rem;
         }
     }
     @include tablet{
         @include grid(3,4rem);
+        .trabajador{
+            p{
+                font-size: 1.6rem;
+                line-height: 1.2rem;
+            }
+        }
     }
 }

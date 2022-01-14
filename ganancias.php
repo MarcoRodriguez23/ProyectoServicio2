@@ -35,28 +35,28 @@
             </section>
             <main>
                 <h2>Ganancias</h2>
-                <div class=" citas contenedor">
+                <div class=" tabla contenedor table-responsive">
                     
                     <table>
                         <tr>
-                        <th>Representante</th>
-                        <th>Comisión</th>
-                        <th>Vendedor</th>
-                        <th>Comisión</th>
-                        <th>Inmueble</th>
-                        <th>Precio</th>
-                        <th>Fecha</th>
-                        <th>Lugar</th>
+                            <th>Representante</th>
+                            <th>Comisión</th>
+                            <th>Vendedor</th>
+                            <th>Comisión</th>
+                            <th>Inmueble</th>
+                            <th>Precio</th>
+                            <th>Fecha</th>
+                            <th>Lugar</th>
                         </tr>
                         <tr>
-                        <td>Nombre y apellido</td>
-                        <td>$$$$$</td>
-                        <td>Nombre y apellido</td>
-                        <td>$$$$$</td>
-                        <td>inmueble X</td>
-                        <td>$$$$$</td>
-                        <td>dd/mm/aaaa</td>
-                        <td>dirección</td>
+                            <td>Nombre y apellido</td>
+                            <td>$$$$$</td>
+                            <td>Nombre y apellido</td>
+                            <td>$$$$$</td>
+                            <td>inmueble X</td>
+                            <td>$$$$$</td>
+                            <td>dd/mm/aaaa</td>
+                            <td>dirección</td>
                         </tr>
                     </table> 
                 </div>

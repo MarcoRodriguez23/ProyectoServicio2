@@ -10,10 +10,12 @@
 
 .boton-rojo{
     @include boton($rojo);
+    @include transicionBotones($rojo-intenso);
 }
 
 .boton-amarillo{
     @include boton($amarillo);
+    @include transicionBotones($amarillo-intenso);
 }
 
 .boton-azul{
@@ -23,6 +25,7 @@
 
 .boton-verde{
     @include boton ($verde);
+    @include transicionBotones($verde-intenso);
 }
 
 .creacion,.volver{
@@ -48,4 +51,32 @@
     flex-direction: column;
     // justify-content: center;
     // align-items: center;
+}
+
+
+.tabla{
+    border: 1px solid $gris;
+    border-radius: 0.5rem;
+    background-color: $blanco-gris;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    table{
+        background-color: $blanco;
+        width: 98%;
+        margin: 2rem auto;
+        th,td{
+            border: 1px solid $gris;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+        }
+    }
+
+    @include tablet{
+        table{
+            th,td{
+                font-size: 1.6rem;
+            }
+        }
+    }
 }

@@ -35,7 +35,7 @@
             </section>
             <main>
                 <h2>Citas agendadas</h2>
-                <div class="contenedor citas">
+                <div class="tabla contenedor table-responsive">
                     
                     <table>
                         <tr>

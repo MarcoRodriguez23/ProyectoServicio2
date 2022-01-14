@@ -14,19 +14,3 @@
         flex-direction: column;
     }
 }
-
-.citas{
-    border: 1px solid $gris;
-    background-color: $blanco-gris;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    table{
-        background-color: $blanco;
-        width: 98%;
-        margin: 2rem auto;
-        th,td{
-            border: 1px solid $gris;
-            text-align: center;
-        }
-    }
-}
