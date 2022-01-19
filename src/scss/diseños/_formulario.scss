@@ -3,7 +3,6 @@
 
 //cargar inmueble
 .formulario{
-    padding: 0 1rem;
     fieldset{
         background-color: $blanco-gris;
         border-radius: 0.5rem;
@@ -18,7 +17,7 @@
         }
         label,input{
             width: 94%;
-            margin: auto;
+            margin: 0.5rem auto;
         }
     }
     .opciones{

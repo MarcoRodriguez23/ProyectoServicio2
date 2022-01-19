@@ -42,7 +42,7 @@
 }
 
 @mixin transicionBotones($colorIntenso){
-    transition: all 0.5s ease;
+    transition: all 0.6s ease;
     &:hover{
         background-color: $colorIntenso;
         color: $blanco;

@@ -18,41 +18,53 @@
     @include transicionBotones($amarillo-intenso);
 }
 
-.boton-azul{
-    @include boton ($azul);
-    color: $blanco;
-}
-
 .boton-verde{
     @include boton ($verde);
     @include transicionBotones($verde-intenso);
 }
 
-.creacion,.volver{
-    margin-bottom: 2rem;
+.boton-azul{
+    @include boton ($azul);
+    color: $blanco;
+}
+
+.boton-cafe{
+    @include boton($cafe);
+}
+
+
+.boton-superior{
+    background-color: $cafe;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
     display: flex;
-    
-    .boton-azul{
-        font-size: 1.8rem;
-        width: auto;
-        height: auto;
-        
+    justify-content: center;
+    align-items: center;
+    @include transicionBotones($cafe);
+    &:hover{
+        transform: scale(1.15);
     }
+
 }
-.creacion{
-    justify-content: flex-start;
-}
-.volver{
-    justify-content: flex-start;
+
+.opcion-superior{
+    margin: 2rem auto;
+    display: flex;
+    justify-content: flex-end;
+    a{
+        img{
+            height: 60%;
+            width: 60%;
+            margin:auto;
+        }
+    }
 }
 
 .plantilla{
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
 }
-
 
 .tabla{
     border: 1px solid $gris;

@@ -46,7 +46,6 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 0 0.5rem;
             .ubicacion,.precio,.pago,.estado{
                 margin: 0 auto;
                 text-align: center;
@@ -60,10 +59,8 @@
                 color: red;
             }
         }
-
     }
-
-    @include tablet{
+    @include desktop{
         @include grid(4,2rem);
     }
 }
@@ -74,27 +71,28 @@
 
 .beneficios{
     margin:1rem 0;
-    display: flex;
-    justify-content: space-between;
+    @include grid(2,1rem);
+    // display: flex;
+    // justify-content: space-between;
     width: 100%;
     .beneficio{
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: auto 0.5rem;
-        border-right: 1px solid $gris;
+        margin: auto;
+        // border-right: 1px solid $gris;
         &:last-of-type{
             border-right: none;
         }
         img{
-            height: auto;
-            width: 40%;
+            height: 35%;
+            width: 35%;
             margin: auto;
             border-radius: 0;
         }
         p{
-            font-size: 1rem;
-            margin: 0 0.5rem; 
+            font-size: 1.2rem;
+            margin: auto 0.8rem; 
         }
         // @include tablet{
         //     img{
@@ -109,20 +107,22 @@
 }
 
 .opciones{
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 1.4rem;
+    
+    @include grid(2,0.5rem);
     a{
-        margin-top: 0.6rem;
-        width: 60%;
+        font-size: 1rem;
+        width: 100%;
+        height: auto;
+        margin: auto;
+        color: $negro;
+        &:hover{
+            color: $blanco;
+        }
     }
-
     @include tablet{
-        justify-content: space-evenly;
         a{
-            flex: 0 0 calc(33% - 0.5rem);
-            text-align: center;
+            font-size: 1.4rem;
         }
     }
 }

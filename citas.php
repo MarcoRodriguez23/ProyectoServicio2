@@ -7,7 +7,9 @@
                     &#128270;<input class="buscador" type="search" placeholder="buscar por ciudad, colonia, alcaldía, municipio">
                 </div>
             </header> -->
-            <section>
+            
+            <main>
+                <h2>Citas agendadas</h2>
                 <form action="" method="post" class="contenedor filtro contenido-centrado">
                     <select name="nombre" id="nombre">
                         <option value="" selected disabled>Nombre</option>
@@ -32,9 +34,6 @@
                     
                     <button type="submit">Buscar</button>
                 </form>
-            </section>
-            <main>
-                <h2>Citas agendadas</h2>
                 <div class="tabla contenedor table-responsive">
                     
                     <table>

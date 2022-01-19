@@ -1,13 +1,9 @@
 <?php
     require 'templates/header.php';
 ?>
-            <!-- <header class="header">
-                <h1>Inmuebles en venta</h1>
-                <div class="buscador">
-                    &#128270;<input class="buscador" type="search" placeholder="buscar por ciudad, colonia, alcaldía, municipio">
-                </div>
-            </header> -->
-            <section>
+            
+            <main>
+                <h2>Ganancias</h2>
                 <form action="" method="post" class="contenedor filtro contenido-centrado">
                     <select name="representante" id="representante">
                         <option value="" selected disabled>Representante</option>
@@ -32,9 +28,6 @@
 
                     <button type="submit">Buscar</button>
                 </form>
-            </section>
-            <main>
-                <h2>Ganancias</h2>
                 <div class=" tabla contenedor table-responsive">
                     
                     <table>

@@ -46,7 +46,7 @@
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <!-- <i class="fas fa-align-left"></i> -->
-                        <span>&#8592;</span>
+                        <span>Menú</span>
                     </button>
                 </div>
             </nav>

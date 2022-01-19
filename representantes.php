@@ -2,11 +2,13 @@
     require 'templates/header.php';
 
 ?>
+            <div class="opcion-superior contenedor">
+                    <a href="representante.php" class="boton-superior"><img src="build/img/persona.svg" alt="trabajador"></a>
+            </div>
             <main>
+                
                 <h1>Representantes</h1>
-                <div class="creacion contenedor">
-                    <a href="representante.php" class="boton-azul">Crear nuevo representante</a>
-                </div>
+                
                 <div class="trabajadores contenedor">
                     <div class="plantilla">
                         <div class="trabajador">
