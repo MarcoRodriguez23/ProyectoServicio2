@@ -12,10 +12,9 @@
     <input type="number" placeholder="ejem: 5546782345" id="telefono">
 </fieldset>
 
-<fieldset>
-    <legend>Credenciales</legend>
-        <label for="correo">Correo</label>
-        <input type="email" placeholder="correo@correo.com" id="correo">
-        <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
+<fieldset class="comision">
+    <legend>Comisión</legend>
+    <label for="comision">Porcentaje de comisión</label>
+    <input type="number" placeholder="ejem: 30" id="comision" min="1" max="100">
 </fieldset>
+

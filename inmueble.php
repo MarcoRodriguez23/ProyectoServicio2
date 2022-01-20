@@ -1,16 +1,15 @@
 <?php
     require 'templates/header.php';
 ?>
+            <div class="opcion-superior contenedor">
+                <a href="inmuebles.php" class="boton-cafe">Volver</a>
+            </div>
             <main class="contenedor">
                 <section class="datos-propiedad">
                     <h3>Dirección del departamento</h3>
                     <p class="precio">$ ##,###,###</p>
-                    <!-- <p>¿Estás interesado en esta propiedad? Solicita Información mediante Whatsapp</p>
-                    <a href="#"><img src="build/img/whatsapp.svg" alt="whatsapp" class="icono"></a> -->
                 </section>
-                <div class="volver">
-                    <a href="inmuebles.php" class="boton-azul">Volver</a>
-                </div>
+                
                 <div class="pre-imagenes">
                     <img src="build/img/1.jpg" alt="imagen" id="primer-imagen">
                     <img src="build/img/1.jpg" alt="imagen">
@@ -68,7 +67,11 @@
                 </p>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1882.0899007228506!2d-99.15182182807233!3d19.36136581681272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ffc9e53d8deb%3A0xed620e231dadd1ac!2sAv.%20Popocat%C3%A9petl%20158%2C%20Portales%20Nte%2C%20Benito%20Ju%C3%A1rez%2C%2003300%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1640037359833!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </section>
+            <div class="contenedor" style="margin: 2rem auto;">
+                <a href="agenda.php" class="boton-cafe">Agendar cita</a>
+            </div>
         </div>
+        
 <?php
     require 'templates/footer.php';
 ?>

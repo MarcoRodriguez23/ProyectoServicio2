@@ -34,6 +34,12 @@
                     
                     <button type="submit">Buscar</button>
                 </form>
+                <div class="contenedor">
+                    <ul>
+                        <li>Representante</li>
+                        <li>Vendedor</li>
+                    </ul>
+                </div>
                 <div class="tabla contenedor table-responsive">
                     
                     <table>
@@ -45,7 +51,21 @@
                         </tr>
                         <tr>
                           <td>Nombre y apellido</td>
-                          <td>inmueble X</td>
+                          <td>
+                              <a href="inmueble.php">
+                                inmueble X
+                              </a>
+                          </td>
+                          <td>dd/mm/aaaa</td>
+                          <td>hh:mm</td>
+                        </tr>
+                        <tr>
+                          <td>Nombre y apellido</td>
+                          <td>
+                              <a href="inmueble.php">
+                                inmueble X
+                              </a>
+                          </td>
                           <td>dd/mm/aaaa</td>
                           <td>hh:mm</td>
                         </tr>

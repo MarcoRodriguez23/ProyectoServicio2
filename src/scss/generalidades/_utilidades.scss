@@ -30,6 +30,26 @@
 
 .boton-cafe{
     @include boton($cafe);
+    font-size: 2rem;
+    height: auto;
+    width: auto;
+    color: $blanco;
+}
+
+.boton-aumento{
+    @include boton ($azul);
+    color: $negro;
+    &:focus{
+        background-color: $azul-intenso;
+    }
+}
+
+.boton-tipo{
+    @include boton ($azul);
+    color: $negro;
+    &:focus{
+        background-color: $azul-intenso;
+    }
 }
 
 
@@ -91,4 +111,8 @@
             }
         }
     }
+}
+
+.comision{
+    background-color: $verde !important;
 }

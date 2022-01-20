@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="build/css/app.css">
-    <title>inmobiliaria</title>
-    <a href="index.html">volver</a>
-</head>
-<body>
+<?php 
+    require 'templates/header.php';
+
+?>
     <main>
+        <div class="opcion-superior contenedor contenido-centrado">
+            <a href="inmuebles.php" class="boton-cafe">Volver</a>
+        </div>
         <h1>Agendar cita</h1>
         <div class="contenedor contenido-centrado">
             <p class="text-center">Coloca los datos para la fecha de tu cita</p>
@@ -38,26 +34,7 @@
             </form>
         </div>
 
-        <h2>Citas agendadas</h2>
-        <div class="contenedor citas contenido-centrado">
-            
-            <table>
-                <tr>
-                  <th>Nombre</th>
-                  <th>Inmueble de interés</th>
-                  <th>Fecha</th>
-                  <th>Hora</th>
-                </tr>
-                <tr>
-                  <td>Nombre y apellido</td>
-                  <td>inmueble X</td>
-                  <td>dd/mm/aaaa</td>
-                  <td>hh:mm</td>
-                </tr>
-              </table> 
-        </div>
     </main>
 
-</body>
-<script src="build/js/bundle.js"></script>
-</html>
+<?php
+    require 'templates/footer.php';

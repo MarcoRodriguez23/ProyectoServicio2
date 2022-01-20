@@ -46,12 +46,12 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            .ubicacion,.precio,.pago,.estado{
+            .direccion,.precio,.pago,.estado{
                 margin: 0 auto;
                 text-align: center;
                 font-size: 1.4rem;
             }
-            .ubicacion{
+            .direccion{
                 color: $gris;
             }
             

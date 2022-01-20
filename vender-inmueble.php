@@ -1,10 +1,11 @@
 <?php
     require 'templates/header.php';
 ?>
-            <h1>Proceso de venta</h1>
-            <div class="volver contenedor">
-                    <a href="inmuebles.php" class="boton-azul">Volver</a>
+            <div class="opcion-superior contenedor">
+                <a href="inmuebles.php" class="boton-cafe">Volver</a>
             </div>
+            <h1>Proceso de venta</h1>
+            
             <section>
                 <h2>Inmueble X</h2>
                 <div class="resumen-venta contenedor">
@@ -53,7 +54,7 @@
                         <button type="submit">Buscar</button>
                     </form>
                 </div>
-                <div class="contenedor citas">
+                <div class="contenedor tabla">
                 <table>
                         <tr>
                         <th>Representate</th>

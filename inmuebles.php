@@ -53,7 +53,7 @@
                             <div class="inmueble">
                                 <img src="build/img/1.jpg" alt="foto del inmueble">
                                 <div class="info-inmueble">
-                                    <p class="ubicacion">Calle, Colonia, Delegación</p>
+                                    <p class="direccion">Calle, Colonia, Delegación</p>
                                     <p class="precio" class="precio">Precio</p>
                                     <p class="pago">Forma de pago</p>
                                     <p class="estado">Estado</p>
@@ -81,7 +81,7 @@
                         <div class="opciones">
                             <a href="actualizar-inmueble.php?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
                             <a href="vender-inmueble.php?id=<?php echo $row['id']; ?>" class="boton boton-verde">Vender</a>
-                            <a href="vender-inmueble.php?id=<?php echo $row['id']; ?>" class="boton boton-azul">Agendar</a>
+                            <a href="agenda.php?id=<?php echo $row['id']; ?>" class="boton boton-azul">Agendar</a>
                             <a href="#" class="boton boton-rojo">Eliminar</a>
                         </div>
                     </div><!--plantilla -->
@@ -90,7 +90,7 @@
                             <div class="inmueble">
                                 <img src="build/img/1.jpg" alt="foto del inmueble">
                                 <div class="info-inmueble">
-                                    <p class="ubicacion">Calle, Colonia, Delegación</p>
+                                    <p class="direccion">Calle, Colonia, Delegación</p>
                                     <p class="precio" class="precio">Precio</p>
                                     <p class="pago">Forma de pago</p>
                                     <p class="estado">Estado</p>
@@ -118,7 +118,7 @@
                         <div class="opciones">
                             <a href="actualizar-inmueble.php?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
                             <a href="vender-inmueble.php?id=<?php echo $row['id']; ?>" class="boton boton-verde">Vender</a>
-                            <a href="vender-inmueble.php?id=<?php echo $row['id']; ?>" class="boton boton-azul">Agendar</a>
+                            <a href="agenda.php?id=<?php echo $row['id']; ?>" class="boton boton-azul">Agendar</a>
                             <a href="#" class="boton boton-rojo">Eliminar</a>
                         </div>
                     </div><!--plantilla -->
@@ -127,7 +127,7 @@
                             <div class="inmueble">
                                 <img src="build/img/1.jpg" alt="foto del inmueble">
                                 <div class="info-inmueble">
-                                    <p class="ubicacion">Calle, Colonia, Delegación</p>
+                                    <p class="direccion">Calle, Colonia, Delegación</p>
                                     <p class="precio" class="precio">Precio</p>
                                     <p class="pago">Forma de pago</p>
                                     <p class="estado">Estado</p>
@@ -155,7 +155,7 @@
                         <div class="opciones">
                             <a href="actualizar-inmueble.php?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
                             <a href="vender-inmueble.php?id=<?php echo $row['id']; ?>" class="boton boton-verde">Vender</a>
-                            <a href="vender-inmueble.php?id=<?php echo $row['id']; ?>" class="boton boton-azul">Agendar</a>
+                            <a href="agenda.php?id=<?php echo $row['id']; ?>" class="boton boton-azul">Agendar</a>
                             <a href="#" class="boton boton-rojo">Eliminar</a>
                         </div>
                     </div><!--plantilla -->
@@ -164,7 +164,7 @@
                             <div class="inmueble">
                                 <img src="build/img/1.jpg" alt="foto del inmueble">
                                 <div class="info-inmueble">
-                                    <p class="ubicacion">Calle, Colonia, Delegación</p>
+                                    <p class="direccion">Calle, Colonia, Delegación</p>
                                     <p class="precio" class="precio">Precio</p>
                                     <p class="pago">Forma de pago</p>
                                     <p class="estado">Estado</p>
@@ -192,7 +192,7 @@
                         <div class="opciones">
                             <a href="actualizar-inmueble.php?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
                             <a href="vender-inmueble.php?id=<?php echo $row['id']; ?>" class="boton boton-verde">Vender</a>
-                            <a href="vender-inmueble.php?id=<?php echo $row['id']; ?>" class="boton boton-azul">Agendar</a>
+                            <a href="agenda.php?id=<?php echo $row['id']; ?>" class="boton boton-azul">Agendar</a>
                             <a href="#" class="boton boton-rojo">Eliminar</a>
                         </div>
                     </div><!--plantilla -->

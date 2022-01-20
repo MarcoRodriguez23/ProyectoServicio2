@@ -12,6 +12,12 @@
     <input type="number" placeholder="ejem: 5546782345" id="telefono">
 </fieldset>
 
+<fieldset class="comision">
+    <legend>Comisión</legend>
+    <label for="comision">Porcentaje de comisión</label>
+    <input type="number" placeholder="ejem: 30" id="comision" min="1" max="100">
+</fieldset>
+
 <fieldset>
     <legend>Asignar rol</legend>
     <label for="rol">Rol</label>

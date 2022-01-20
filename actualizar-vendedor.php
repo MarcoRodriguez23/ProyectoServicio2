@@ -1,10 +1,10 @@
 <?php
     require 'templates/header.php';
 ?>
-            <h1>Actualizar vendedor</h1>
-            <div class="volver contenedor">
-                    <a href="vendedores.php" class="boton-azul">Volver</a>
+            <div class="opcion-superior contenedor">
+                <a href="vendedores.php" class="boton-cafe">Volver</a>
             </div>
+            <h1>Actualizar vendedor</h1>
             <form action="index.html" class="contenedor formulario contenido-centrado" type="POST" enctype="multipart/form-data">
                 <?php
                     require 'templates/formulario-vendedor.php';
