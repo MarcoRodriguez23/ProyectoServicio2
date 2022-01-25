@@ -9,6 +9,8 @@
         margin-top: 1rem;
         display: flex;
         flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
         legend{
             font-weight: $bold;
         }
@@ -16,8 +18,13 @@
             padding: 0.5rem 1rem;
         }
         label,input{
-            width: 94%;
+            width: 90%;
             margin: 0.5rem auto;
+        }
+        div{
+            input{
+                width: 100%;
+            }
         }
     }
     .opciones{

@@ -35,9 +35,9 @@
                     <button type="submit">Buscar</button>
                 </form>
                 <div class="contenedor">
-                    <ul>
-                        <li>Representante</li>
-                        <li>Vendedor</li>
+                    <ul style="padding: 0;">
+                        <li class="leyenda-representante" style="display: inline; padding:1rem;">Representante</li>
+                        <li class="leyenda-vendedor" style="display: inline; padding:1rem;">Vendedor</li>
                     </ul>
                 </div>
                 <div class="tabla contenedor table-responsive">
@@ -50,7 +50,7 @@
                           <th>Hora</th>
                         </tr>
                         <tr>
-                          <td>Nombre y apellido</td>
+                          <td class="leyenda-representante">Nombre y apellido</td>
                           <td>
                               <a href="inmueble.php">
                                 inmueble X
@@ -60,7 +60,7 @@
                           <td>hh:mm</td>
                         </tr>
                         <tr>
-                          <td>Nombre y apellido</td>
+                          <td class="leyenda-vendedor">Nombre y apellido</td>
                           <td>
                               <a href="inmueble.php">
                                 inmueble X

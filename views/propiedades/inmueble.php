@@ -34,6 +34,10 @@
                                 <p>2 est</p>
                             </div>
                             <div class="beneficio">
+                                <img src="build/img/icono_wc.svg" alt="beneficio1">
+                                <p>2 wc</p>
+                            </div>
+                            <div class="beneficio">
                                 <img src="build/img/medida.svg" alt="beneficio1">
                                 <p>72 m2</p>
                             </div>

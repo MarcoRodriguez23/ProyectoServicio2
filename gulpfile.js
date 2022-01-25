@@ -27,7 +27,7 @@ function css() {
         .pipe(postcss([autoprefixer(), cssnano()]))
         // .pipe(postcss([autoprefixer()]))
         .pipe(sourcemaps.write('.'))
-        .pipe( dest('./build/css') );
+        .pipe( dest('./public/build/css') );
 }
 
 function javascript() {
@@ -37,7 +37,7 @@ function javascript() {
       .pipe(terser())
       .pipe(sourcemaps.write('.'))
     //   .pipe(rename({ suffix: '.min' }))
-      .pipe(dest('./build/js'))
+      .pipe(dest('./public/build/js'))
 }
 
 function imagenes() {
@@ -54,7 +54,7 @@ function versionWebp() {
         .pipe( webp({
             quality: 50
         }) )
-        .pipe(dest('build/img'))
+        .pipe(dest('./public/build/img'))
         .pipe(notify({ message: 'Imagen webp Completada'}));
 }
 

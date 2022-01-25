@@ -28,29 +28,28 @@
     <legend>Valor de la propiedad</legend>
 
     <label for="precio">Precio</label>
-    <input type="number" placeholder="ejem: 1000000" id="precio" min="1">
+    <input type="number" placeholder="ejem: 1000000" id="precio" min="1" name="precio">
 
-    <label for="aumento-disminucion">Agregar</label>
-    <div class="opciones">
-        <input name="aumento-disminicion" type="radio" value="Descuento" id="descuento">
-        <label for="descuento">Descuento</label>
-        <input name="aumento-disminicion" type="radio" value="Aumento" id="aumento"> 
-        <label for="aumento">Aumento</label>
-    </div>
-
-    <label id="tipo-a-agregar">--Seleccione descuento o aumento--</label>
-    <div class="opciones"> 
-        <input name="tipo-a-agregar" type="radio" value="Porcentaje" id="porcentaje">
-        <label for="porcentaje">Porcentaje</label>
-        <input name="tipo-a-agregar" type="radio" value="Cantidad" id="cantidad"> 
-        <label for="cantidad">Cantidad</label>  
+    <div class="contenedor">
+        <label for="aumento-disminucion">Agregar</label>
+        <div class="opciones">
+            <input name="aumento-disminucion" type="radio" value="Descuento">
+            <label for="descuento">Descuento</label>
+            <input name="aumento-disminucion" type="radio" value="Aumento"> 
+            <label for="aumento">Aumento</label>
+        </div>
     </div>
     
-    <label id="denominacion">--Seleccione porcentaje o aumento--</label>
-    <input type="number" placeholder="----" id="input-denominacion" min="1">
+    <div id="tipo-a-agregar" class="contenedor">
+
+    </div>
+    
+    <div id="denominacion" class="contenedor">
+
+    </div>
 
     <label for="valor-final">Valor final:</label>
-    <input type="number" name="valor-final" id="valor-final" disabled placeholder="$$$$">
+    <input type="number" name="valor-final" disabled placeholder="$$$$">
 
 </fieldset>
 
@@ -202,19 +201,19 @@
 <fieldset class="opciones">
     <legend>Opciones de venta</legend>
 
-    <input type="checkbox" id="">
+    <input type="checkbox" id="fovissste">
     <label for="">FOVISSSTE</label>
     
-    <input type="checkbox" id="">
+    <input type="checkbox" id="cofinavit">
     <label for="">COFINAVIT</label>
     
-    <input type="checkbox" id="">
+    <input type="checkbox" id="credito">
     <label for="">Credito bancario</label>
     
-    <input type="checkbox" id="">
+    <input type="checkbox" id="efectivo">
     <label for="">Efectivo</label>
     
-    <input type="checkbox" id="">
+    <input type="checkbox" id="opcionesDeVenta">
     <label for="">Todas las opciones</label>
     
 </fieldset>
