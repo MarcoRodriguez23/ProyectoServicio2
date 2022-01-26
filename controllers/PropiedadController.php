@@ -7,7 +7,7 @@ class PropiedadController{
 
     public static function index(Router $router){
         
-        $router->view('/propiedades/admin',[
+        $router->view('/propiedades/lista',[
 
         ]);
     }
@@ -28,14 +28,21 @@ class PropiedadController{
 
     }
 
-    public static function propiedad(Router $router){
+    public static function delete(){
         
-        $router->view('/propiedades/inmueble',[
+    }
+
+    public static function info(Router $router){
+        
+        $router->view('/propiedades/info',[
 
         ]);
     }
 
-    public static function delete(){
+    public static function date(Router $router){
         
+        $router->view('/propiedades/visita',[
+
+        ]);
     }
 }

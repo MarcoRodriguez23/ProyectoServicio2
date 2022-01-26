@@ -20,8 +20,6 @@
     <label for="ubicacion">Link de ubicación</label>
     <input type="text" placeholder="Enlace de google maps" id="ubicacion">
     
-    
-
 </fieldset>
 
 <fieldset id="valor-inmueble">

@@ -17,16 +17,18 @@
     $router->get('/propiedades/update',[PropiedadController::class,'update']);
     $router->post('/propiedades/update',[PropiedadController::class,'update']);
     $router->post('/propiedades/delete',[PropiedadController::class,'delete']);
-    $router->post('/propiedades/inmueble',[PropiedadController::class,'inmueble']);
+    $router->get('/propiedades/info',[PropiedadController::class,'info']);
+    $router->get('/propiedades/date',[PropiedadController::class,'date']);
+    $router->post('/propiedades/date',[PropiedadController::class,'date']);
 
-    $router->get('/agentes/index',[AgenteController::class,'index']);
+    $router->get('/agentes',[AgenteController::class,'index']);
     $router->get('/agentes/create',[AgenteController::class,'create']);
     $router->post('/agentes/create',[AgenteController::class,'create']);
     $router->get('/agentes/update',[AgenteController::class,'update']);
     $router->post('/agentes/update',[AgenteController::class,'update']);
     $router->post('/agentes/delete',[AgenteController::class,'delete']);
 
-    $router->get('/vendedores/index',[VendedorController::class,'index']);
+    $router->get('/vendedores',[VendedorController::class,'index']);
     $router->get('/vendedores/create',[VendedorController::class,'create']);
     $router->post('/vendedores/create',[VendedorController::class,'create']);
     $router->get('/vendedores/update',[VendedorController::class,'update']);

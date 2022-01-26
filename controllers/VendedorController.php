@@ -7,7 +7,7 @@ class VendedorController{
 
     public static function index(Router $router){
 
-        $router->view('vendedores/index',[
+        $router->view('vendedores/lista',[
 
         ]);
         
@@ -15,14 +15,20 @@ class VendedorController{
 
     public static function create(Router $router){
         
+        $router->view('vendedores/create',[
+
+        ]);
     }
 
     public static function update(Router $router){
         
+        $router->view('vendedores/update',[
 
+        ]);
     }
 
     public static function delete(){
+        
         
     }
 }
