@@ -45,4 +45,11 @@ class PropiedadController{
 
         ]);
     }
+
+    public static function sell(Router $router){
+        
+        $router->view('/propiedades/sell',[
+
+        ]);
+    }
 }

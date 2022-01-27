@@ -28,12 +28,13 @@
     color: $blanco;
 }
 
-.boton-cafe{
-    @include boton($cafe);
+.boton-volver{
+    @include boton($amarillo);
     font-size: 2rem;
     height: auto;
     width: auto;
-    color: $blanco;
+    color: $negro;
+    @include transicionBotones($amarillo-intenso);
 }
 
 .boton-aumento{
@@ -54,14 +55,14 @@
 
 
 .boton-superior{
-    background-color: $cafe;
+    background-color: $amarillo;
     width: 12rem;
     height: 12rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    @include transicionBotones($cafe);
+    @include transicionBotones($amarillo-intenso);
     &:hover{
         transform: scale(1.15);
     }

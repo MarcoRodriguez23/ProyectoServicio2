@@ -1,42 +1,78 @@
-// general
+// // general
 
 
-//cargar inmueble
+// //cargar inmueble
+// .formulario{
+//     fieldset{
+//         background-color: $blanco-gris;
+//         border-radius: 0.5rem;
+//         margin-top: 1rem;
+//         // display: flex;
+//         flex-direction: column;
+//         // justify-content: center;
+//         // align-items: center;
+//         legend{
+//             font-weight: $bold;
+//         }
+//         input{
+//             padding: 0.5rem 1rem;
+//         }
+//         label,input{
+//             width: 90%;
+//             margin: 0.5rem auto;
+//         }
+//         div{
+//             input{
+//                 width: 100%;
+//             }
+//         }
+//     }
+//     .opciones{
+//         display: grid;
+//         @include grid(2,0.2rem);
+//         @include tablet{
+//             @include grid(4,0.2rem);
+//         }
+//     }
+
+//     button{
+//         margin: 2rem auto;
+//     }
+// }
+
 .formulario{
     fieldset{
+        margin: 1rem auto;
         background-color: $blanco-gris;
-        border-radius: 0.5rem;
-        margin-top: 1rem;
         display: flex;
         flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
+        border-radius: 1rem;
         legend{
             font-weight: $bold;
         }
         input{
             padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            border: none;
         }
         label,input{
             width: 90%;
             margin: 0.5rem auto;
         }
-        div{
-            input{
-                width: 100%;
+        .opciones{
+            display: grid;
+            @include grid(2,0.2rem);
+            @include tablet{
+                @include grid(4,0.2rem);
             }
         }
     }
-    .opciones{
-        display: grid;
-        @include grid(2,0.2rem);
-        @include tablet{
-            @include grid(4,0.2rem);
-        }
-    }
-
     button{
-        margin: 2rem auto;
+        width: auto;
+        height: auto;
+        padding: 1rem;
+        font-size: 2rem;
+        display: block;
+        margin: auto;
     }
 }
-

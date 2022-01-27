@@ -44,7 +44,7 @@ a:focus {
 #sidebar {
     min-width: 25%;
     max-width: 25%;
-    background: #7386D5;
+    background: $azul;
     color: #fff;
     transition: all 0.3s;
     ul{
@@ -184,6 +184,7 @@ a.article:hover {
 #sidebarCollapse{
     border-radius: 0.5rem;
     padding: auto;
+    background-color: $azul;
     span{
         margin: 0;
         // font-size: 3rem;

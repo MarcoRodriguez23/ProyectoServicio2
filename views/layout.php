@@ -28,10 +28,10 @@
             </ul>
             <ul class="list-unstyled components">
                 <li>
-                    <a href="/ganacias">Ganancias</a>
+                    <a href="/ganancias">Ganancias</a>
                 </li>
                 <li>
-                    <a href="/citas">Agenda</a>
+                    <a href="/agenda">Agenda</a>
                 </li>
             </ul>
             <ul class="list-unstyled components">

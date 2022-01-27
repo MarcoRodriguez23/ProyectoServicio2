@@ -1,5 +1,5 @@
 <div class="opcion-superior contenedor">
-    <a href="/admin" class="boton-cafe">Volver</a>
+    <a href="/admin" class="boton-volver">Volver</a>
 </div>
 <main class="contenedor">
     <section class="datos-propiedad">
@@ -68,6 +68,9 @@
     </p> -->
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1882.0899007228506!2d-99.15182182807233!3d19.36136581681272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ffc9e53d8deb%3A0xed620e231dadd1ac!2sAv.%20Popocat%C3%A9petl%20158%2C%20Portales%20Nte%2C%20Benito%20Ju%C3%A1rez%2C%2003300%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1640037359833!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </section>
-<div class="contenedor" style="margin: 2rem auto;">
-    <a href="/propiedades/date?id=<?php echo $row['id']; ?>" class="boton-cafe">Agendar cita</a>
+<div class="opciones contenedor" style="width: 80%; margin: 1 rem auto;">
+    <a href="/propiedades/update?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
+    <a href="/propiedades/sell?id=<?php echo $row['id']; ?>" class="boton boton-verde">Vender</a>
+    <a href="/propiedades/date?id=<?php echo $row['id']; ?>" class="boton boton-azul">Agendar</a>
+    <a href="#" class="boton boton-rojo">Eliminar</a>
 </div>

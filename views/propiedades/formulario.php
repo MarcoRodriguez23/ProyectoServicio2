@@ -1,4 +1,4 @@
-<fieldset>
+<fieldset id="paso-1" class="seccion mostrar-seccion">
     <legend>Dirección</legend>
 
     <label for="est">Estado</label>
@@ -22,7 +22,7 @@
     
 </fieldset>
 
-<fieldset id="valor-inmueble">
+<fieldset id="paso-2" class="seccion">
     <legend>Valor de la propiedad</legend>
 
     <label for="precio">Precio</label>
@@ -51,7 +51,7 @@
 
 </fieldset>
 
-<fieldset>
+<fieldset id="paso-3" class="seccion">
     <legend>Fotografías</legend>
 
     <label for="foto">Subir Archivo</label>
@@ -59,7 +59,7 @@
 
 </fieldset>
 
-<fieldset>
+<fieldset id="paso-4" class="seccion">
     <legend>Descripción de la propiedad</legend>
 
     <label for="edad">Edad de la propiedad</label>
@@ -110,7 +110,7 @@
   
 </fieldset>
 
-<fieldset>
+<!-- <fieldset id="paso-5" class="seccion">
     <legend>Departamento</legend>
 
     <label for="piso">Piso</label>
@@ -121,9 +121,9 @@
 
     <label for="elevador">Elevador</label>
     <input type="number" placeholder="ejem: 2" id="elevador" min="0">
-</fieldset>
+</fieldset> -->
 
-<fieldset>
+<fieldset class="seccion" id="paso-5">
     <legend>Estacionamiento</legend>
 
     <label for="tipo-estacionamiento">Tipo</label>
@@ -154,78 +154,84 @@
 
 </fieldset>
 
-<fieldset class="opciones">
+<fieldset class="seccion" id="paso-6">
     <legend>Muebles</legend>
+    <div class="opciones">
+        <input type="checkbox" id="sala">
+        <label for="sala">Sala</label>
 
-    <input type="checkbox" id="sala">
-    <label for="sala">Sala</label>
+        <input type="checkbox" id="lavadora">
+        <label for="lavadora">Lavadora</label>
 
-    <input type="checkbox" id="lavadora">
-    <label for="lavadora">Lavadora</label>
+        <input type="checkbox" id="cocina">
+        <label for="cocina">Cocina</label>
 
-    <input type="checkbox" id="cocina">
-    <label for="cocina">Cocina</label>
+        <input type="checkbox" id="boiler">
+        <label for="boiler">Boiler</label>
 
-    <input type="checkbox" id="boiler">
-    <label for="boiler">Boiler</label>
+        <input type="checkbox" id="camas">
+        <label for="camas">Camas</label>
 
-    <input type="checkbox" id="camas">
-    <label for="camas">Camas</label>
-
-    <input type="checkbox" id="roperos">
-    <label for="roperos">Roperos</label>
+        <input type="checkbox" id="roperos">
+        <label for="roperos">Roperos</label>
+    </div>
 
 </fieldset>
 
-<fieldset class="opciones">
+<fieldset class="seccion" id="paso-7">
     <legend>Amenidades</legend>
+    <div class="opciones">
+        <input type="checkbox" id="garden">
+        <label for="garden">Roof garden</label>
 
-    <input type="checkbox" id="garden">
-    <label for="garden">Roof garden</label>
+        <input type="checkbox" id="uso-multiple">
+        <label for="uso-multiple">Sala de usos multiples</label>
 
-    <input type="checkbox" id="uso-multiple">
-    <label for="uso-multiple">Sala de usos multiples</label>
+        <input type="checkbox" id="gimnasio">
+        <label for="gimnasio">Gimnasio</label>
 
-    <input type="checkbox" id="gimnasio">
-    <label for="gimnasio">Gimnasio</label>
-
-    <input type="checkbox" id="cancha">
-    <label for="cancha">Canchas</label>
+        <input type="checkbox" id="cancha">
+        <label for="cancha">Canchas</label>
+    </div>
 
 </fieldset>
 
 
 
-<fieldset class="opciones">
+<fieldset class="seccion" id="paso-8">
     <legend>Opciones de venta</legend>
 
-    <input type="checkbox" id="fovissste">
-    <label for="">FOVISSSTE</label>
-    
-    <input type="checkbox" id="cofinavit">
-    <label for="">COFINAVIT</label>
-    
-    <input type="checkbox" id="credito">
-    <label for="">Credito bancario</label>
-    
-    <input type="checkbox" id="efectivo">
-    <label for="">Efectivo</label>
-    
-    <input type="checkbox" id="opcionesDeVenta">
-    <label for="">Todas las opciones</label>
-    
+    <div class="opciones">
+        <input type="checkbox" id="fovissste">
+        <label for="">FOVISSSTE</label>
+        
+        <input type="checkbox" id="cofinavit">
+        <label for="">COFINAVIT</label>
+        
+        <input type="checkbox" id="credito">
+        <label for="">Credito bancario</label>
+        
+        <input type="checkbox" id="efectivo">
+        <label for="">Efectivo</label>
+        
+        <input type="checkbox" id="opcionesDeVenta">
+        <label for="">Todas las opciones</label>
+    </div>
+
 </fieldset>
 
-<fieldset class="opciones">
+<fieldset class="seccion" id="paso-9">
     <legend>Papeles</legend>
 
-    <input type="checkbox" id="">
-    <label for="">Escritura pública</label>
+    <div class="opciones">
+        <input type="checkbox" id="">
+        <label for="">Escritura pública</label>
 
-    <input type="checkbox" id="">
-    <label for="">Escritura privada</label>
+        <input type="checkbox" id="">
+        <label for="">Escritura privada</label>
 
-    <input type="checkbox" id="">
-    <label for="">Cesión de derechos</label>
-
+        <input type="checkbox" id="">
+        <label for="">Cesión de derechos</label>
+    </div>
+    
 </fieldset>

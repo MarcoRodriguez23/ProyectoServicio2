@@ -2,7 +2,7 @@
 
 namespace Model;
 
-class Admin extends activeRecord{
+class Login extends activeRecord{
     //BD
     protected static $tabla='usuarios';
     protected static $columnasDB = ['id','email','password'];

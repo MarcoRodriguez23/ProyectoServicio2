@@ -1,6 +1,6 @@
 <main>
     <div class="opcion-superior contenedor contenido-centrado">
-        <a href="/admin" class="boton-cafe">Volver</a>
+        <a href="/admin" class="boton-volver">Volver</a>
     </div>
     <h1>Agendar cita</h1>
     <div class="contenedor contenido-centrado">

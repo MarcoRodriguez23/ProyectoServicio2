@@ -20,6 +20,8 @@
     $router->get('/propiedades/info',[PropiedadController::class,'info']);
     $router->get('/propiedades/date',[PropiedadController::class,'date']);
     $router->post('/propiedades/date',[PropiedadController::class,'date']);
+    $router->get('/propiedades/sell',[PropiedadController::class,'sell']);
+    $router->post('/propiedades/sell',[PropiedadController::class,'sell']);
 
     $router->get('/agentes',[AgenteController::class,'index']);
     $router->get('/agentes/create',[AgenteController::class,'create']);
@@ -34,6 +36,9 @@
     $router->get('/vendedores/update',[VendedorController::class,'update']);
     $router->post('/vendedores/update',[VendedorController::class,'update']);
     $router->post('/vendedores/delete',[VendedorController::class,'delete']);
+
+    $router->get('/ganancias',[PaginasController::class,'ganancias']);
+    $router->get('/agenda',[PaginasController::class,'agenda']);
 
     //zona publica
     // $router->get('/',[PaginasController::class,'index']);

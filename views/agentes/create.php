@@ -1,6 +1,6 @@
 <main>
     <div class="contenedor opcion-superior contenido-centrado">
-        <a href="/agentes" class="boton-cafe">Volver</a>
+        <a href="/agentes" class="boton-volver">Volver</a>
     </div>
     <h1>Nuevo agente inmobiliario</h1>
     <form action="#" class="contenedor formulario contenido-centrado" type="POST" enctype="multipart/form-data">
