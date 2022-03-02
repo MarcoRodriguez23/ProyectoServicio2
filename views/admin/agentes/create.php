@@ -1,8 +1,8 @@
 <main>
-    <div class="opcion-superior contenedor contenido-centrado">
-        <a href="/vendedores" class="boton-volver">Volver</a>
+    <div class="contenedor opcion-superior contenido-centrado">
+        <a href="/admin/agentes" class="boton-volver">Volver</a>
     </div>
-    <h1>Nuevo vendedor</h1>
+    <h1>Nuevo agente inmobiliario</h1>
     <form action="#" class="contenedor formulario contenido-centrado" type="POST" enctype="multipart/form-data">
         <?php
             require 'formulario.php';
@@ -15,6 +15,6 @@
         <input type="password" placeholder="Password" id="password">
     </fieldset>
 
-        <button class="boton-azul" type="submit">Crear vendedor</button>
+        <button class="boton-azul" type="submit">Crear agente</button>
     </form>
 </main>

@@ -2,43 +2,39 @@
     require_once __DIR__ . '/../includes/app.php';
 
     use MVC\Router;
-    use Controllers\PropiedadController;
-    use Controllers\VendedorController;
-    use Controllers\PaginasController;
-    use Controllers\LoginController;
-    use Controllers\AgenteController;
+    use Controllers\AdminController;
 
     $router = new Router();
 
     //zona privada
-    $router->get('/admin',[PropiedadController::class,'index']);
-    $router->get('/propiedades/create',[PropiedadController::class,'create']);
-    $router->post('/propiedades/create',[PropiedadController::class,'create']);
-    $router->get('/propiedades/update',[PropiedadController::class,'update']);
-    $router->post('/propiedades/update',[PropiedadController::class,'update']);
-    $router->post('/propiedades/delete',[PropiedadController::class,'delete']);
-    $router->get('/propiedades/info',[PropiedadController::class,'info']);
-    $router->get('/propiedades/date',[PropiedadController::class,'date']);
-    $router->post('/propiedades/date',[PropiedadController::class,'date']);
-    $router->get('/propiedades/sell',[PropiedadController::class,'sell']);
-    $router->post('/propiedades/sell',[PropiedadController::class,'sell']);
+    $router->get('/admin',[AdminController::class,'index']);
+    $router->get('/admin/propiedades/create',[AdminController::class,'createHouse']);
+    $router->post('/admin/propiedades/create',[AdminController::class,'createHouse']);
+    $router->get('/admin/propiedades/update',[AdminController::class,'updateHouse']);
+    $router->post('/admin/propiedades/update',[AdminController::class,'updateHouse']);
+    $router->post('/admin/propiedades/delete',[AdminController::class,'deleteHouse']);
+    $router->get('/admin/propiedades/info',[AdminController::class,'infoHouse']);
+    $router->get('/admin/propiedades/date',[AdminController::class,'dateHouse']);
+    $router->post('/admin/propiedades/date',[AdminController::class,'dateHouse']);
+    $router->get('/admin/propiedades/sell',[AdminController::class,'sellHouse']);
+    $router->post('/admin/propiedades/sell',[AdminController::class,'sellHouse']);
 
-    $router->get('/agentes',[AgenteController::class,'index']);
-    $router->get('/agentes/create',[AgenteController::class,'create']);
-    $router->post('/agentes/create',[AgenteController::class,'create']);
-    $router->get('/agentes/update',[AgenteController::class,'update']);
-    $router->post('/agentes/update',[AgenteController::class,'update']);
-    $router->post('/agentes/delete',[AgenteController::class,'delete']);
+    $router->get('/admin/agentes',[AdminController::class,'agents']);
+    $router->get('/admin/agentes/create',[AdminController::class,'createAgent']);
+    $router->post('/admin/agentes/create',[AdminController::class,'createAgent']);
+    $router->get('/admin/agentes/update',[AdminController::class,'updateAgent']);
+    $router->post('/admin/agentes/update',[AdminController::class,'updateAgent']);
+    $router->post('/admin/agentes/delete',[AdminController::class,'deleteAgent']);
 
-    $router->get('/vendedores',[VendedorController::class,'index']);
-    $router->get('/vendedores/create',[VendedorController::class,'create']);
-    $router->post('/vendedores/create',[VendedorController::class,'create']);
-    $router->get('/vendedores/update',[VendedorController::class,'update']);
-    $router->post('/vendedores/update',[VendedorController::class,'update']);
-    $router->post('/vendedores/delete',[VendedorController::class,'delete']);
+    $router->get('/admin/vendedores',[AdminController::class,'sellers']);
+    $router->get('/admin/vendedores/create',[AdminController::class,'createSeller']);
+    $router->post('/admin/vendedores/create',[AdminController::class,'createSeller']);
+    $router->get('/admin/vendedores/update',[AdminController::class,'updateSeller']);
+    $router->post('/admin/vendedores/update',[AdminController::class,'updateSeller']);
+    $router->post('/admin/vendedores/delete',[AdminController::class,'deleteSeller']);
 
-    $router->get('/ganancias',[PaginasController::class,'ganancias']);
-    $router->get('/agenda',[PaginasController::class,'agenda']);
+    $router->get('/admin/ganancias',[AdminController::class,'money']);
+    $router->get('/admin/agenda',[AdminController::class,'dates']);
 
     //zona publica
     // $router->get('/',[PaginasController::class,'index']);

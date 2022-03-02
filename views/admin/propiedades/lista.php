@@ -1,5 +1,5 @@
 <div class="opcion-superior contenedor">
-    <a href="/propiedades/create" class="boton-superior"><img src="/build/img/inmueble.svg" alt="inmueble"></a>
+    <a href="/admin/propiedades/create" class="boton-superior"><img src="/build/img/inmueble.svg" alt="inmueble"></a>
 </div>
 <main>
     <h1>Inmuebles en lista</h1>

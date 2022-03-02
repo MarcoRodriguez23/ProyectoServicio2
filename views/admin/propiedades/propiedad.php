@@ -1,5 +1,5 @@
 <div class="plantilla">
-    <a href="/propiedades/info?id=<?php echo $row['id']; ?>">
+    <a href="/admin/propiedades/info?id=<?php echo $row['id']; ?>">
         <div class="inmueble">
             <img src="build/img/1.jpg" alt="foto del inmueble">
             <div class="info-inmueble">
@@ -29,9 +29,9 @@
         </div>
     </a>
     <div class="opciones">
-        <a href="/propiedades/update?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
-        <a href="/propiedades/sell?id=<?php echo $row['id']; ?>" class="boton boton-verde">Vender</a>
-        <a href="/propiedades/date?id=<?php echo $row['id']; ?>" class="boton boton-azul">Agendar</a>
+        <a href="/admin/propiedades/update?id=<?php echo $row['id']; ?>" class="boton boton-amarillo">Actualizar</a>
+        <a href="/admin/propiedades/sell?id=<?php echo $row['id']; ?>" class="boton boton-verde">Vender</a>
+        <a href="/admin/propiedades/date?id=<?php echo $row['id']; ?>" class="boton boton-azul">Agendar</a>
         <a href="#" class="boton boton-rojo">Eliminar</a>
     </div>
 </div><!--plantilla -->

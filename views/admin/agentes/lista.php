@@ -1,6 +1,6 @@
 <main>
     <div class="opcion-superior contenedor">
-            <a href="/agentes/create" class="boton-superior"><img src="/build/img/persona.svg" alt="trabajador"></a>
+            <a href="/admin/agentes/create" class="boton-superior"><img src="/build/img/persona.svg" alt="trabajador"></a>
     </div>
     <h1>Agentes inmobiliarios</h1>
     <div class="trabajadores contenedor">

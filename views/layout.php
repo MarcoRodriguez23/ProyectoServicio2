@@ -1,3 +1,14 @@
+<?php
+    if(!isset($_SESSION)){
+        session_start();
+    }
+    $auth = $_SESSION['login'] ?? false;
+
+    if(!isset($inicio)){
+        $inicio = false;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +22,7 @@
 <body>
     <div class="wrapper">
         <!-- Sidebar  -->
+        <?php if($auth): ?>
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3>Panel de administración</h3>
@@ -20,23 +32,23 @@
                     <a href="/admin">Propiedades</a>
                 </li>
                 <li>
-                    <a href="/agentes">Agente inmobiliario</a>
+                    <a href="/admin/agentes">Agente inmobiliario</a>
                 </li>
                 <li>
-                    <a href="/vendedores">Vendedores</a>
-                </li>
-            </ul>
-            <ul class="list-unstyled components">
-                <li>
-                    <a href="/ganancias">Ganancias</a>
-                </li>
-                <li>
-                    <a href="/agenda">Agenda</a>
+                    <a href="/admin/vendedores">Vendedores</a>
                 </li>
             </ul>
             <ul class="list-unstyled components">
                 <li>
-                    <a class="boton-amarillo descargar" href="../prueba.txt" download="lista-inmuebles.txt">Descargar lista de inmuebles</a>
+                    <a href="/admin/ganancias">Ganancias</a>
+                </li>
+                <li>
+                    <a href="/admin/agenda">Agenda</a>
+                </li>
+            </ul>
+            <ul class="list-unstyled components">
+                <li>
+                    <a class="boton-amarillo descargar" href="/prueba.txt" download="lista-inmuebles.txt">Descargar lista de inmuebles</a>
                 </li>  
             </ul>
         </nav>
@@ -49,7 +61,7 @@
                     </button>
                 </div>
             </nav>
-
+            <?php endif; ?>
             <?php
             //aqui se va ir agregando el contenido de cada pagina
             echo $contenido;
