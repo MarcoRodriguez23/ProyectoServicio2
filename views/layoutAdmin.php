@@ -1,14 +1,3 @@
-<?php
-    if(!isset($_SESSION)){
-        session_start();
-    }
-    $auth = $_SESSION['login'] ?? false;
-
-    if(!isset($inicio)){
-        $inicio = false;
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +11,6 @@
 <body>
     <div class="wrapper">
         <!-- Sidebar  -->
-        <?php if($auth): ?>
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3>Panel de administración</h3>
@@ -61,7 +49,6 @@
                     </button>
                 </div>
             </nav>
-            <?php endif; ?>
             <?php
             //aqui se va ir agregando el contenido de cada pagina
             echo $contenido;

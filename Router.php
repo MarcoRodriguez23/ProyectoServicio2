@@ -59,8 +59,16 @@ class Router{
         include __DIR__ . "/views/$view.php";
 
         $contenido = ob_get_clean();
-
-        include __DIR__ . "/views/layout.php";
+        
+        session_start();
+        
+        if (session_status()===2) {
+            include __DIR__ . "/views/layoutAdmin.php";
+        }
+        else{
+            include __DIR__ . "/views/layoutUser.php";
+        }
+        
     }
 
 }
