@@ -60,7 +60,7 @@ class Router{
 
         $contenido = ob_get_clean();
         
-        session_start();
+        // session_start();
         
         if (session_status()===2) {
             include __DIR__ . "/views/layoutAdmin.php";

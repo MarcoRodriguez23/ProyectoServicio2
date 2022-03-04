@@ -3,6 +3,7 @@
 
     use MVC\Router;
     use Controllers\AdminController;
+    use Controllers\PaginasController;
 
     $router = new Router();
 
@@ -37,14 +38,20 @@
     $router->get('/admin/agenda',[AdminController::class,'dates']);
 
     //zona publica
-    // $router->get('/',[PaginasController::class,'index']);
-    // $router->get('/nosotros',[PaginasController::class,'nosotros']);
-    // $router->get('/propiedades',[PaginasController::class,'propiedades']);
-    // $router->get('/propiedad',[PaginasController::class,'propiedad']);
-    // $router->get('/blog',[PaginasController::class,'blog']);
-    // $router->get('/entrada',[PaginasController::class,'entrada']);
-    // $router->get('/contacto',[PaginasController::class,'contacto']);
-    // $router->post('/contacto',[PaginasController::class,'contacto']);
+    $router->get('/',[PaginasController::class,'index']);
+    $router->get('/nosotros',[PaginasController::class,'nosotros']);
+    $router->get('/servicios',[PaginasController::class,'servicios']);
+    $router->get('/servicio',[PaginasController::class,'servicio']);
+    $router->get('/inmuebles',[PaginasController::class,'inmuebles']);
+    $router->get('/inmueble',[PaginasController::class,'inmueble']);
+    $router->get('/departamentos',[PaginasController::class,'departamentos']);
+    $router->get('/departamento',[PaginasController::class,'departamento']);
+    $router->get('/terrenos',[PaginasController::class,'terrenos']);
+    $router->get('/terreno',[PaginasController::class,'terreno']);
+    $router->get('/blog',[PaginasController::class,'blog']);
+    $router->get('/entrada',[PaginasController::class,'entrada']);
+    $router->get('/contacto',[PaginasController::class,'contacto']);
+    $router->post('/contacto',[PaginasController::class,'contacto']);
 
     //login y autenticacion
     $router->get('/login',[LoginController::class,'login']);

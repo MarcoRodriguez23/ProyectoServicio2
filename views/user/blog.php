@@ -1,10 +1,10 @@
 <?php
-    require 'templates/config/conexion.php';
-    $db = conectarDB();
-    $query = "SELECT * FROM blog";
-    $blog = mysqli_query($db, $query);
+    // require 'templates/config/conexion.php';
+    // $db = conectarDB();
+    // $query = "SELECT * FROM blog";
+    // $blog = mysqli_query($db, $query);
 
-    include 'templates/header.php';
+    // include 'templates/header.php';
 
 ?>
 
@@ -42,5 +42,5 @@
     </main>
 
 <?php
-    mysqli_close($db);
-    include 'templates/footer.php';
+    // mysqli_close($db);
+    // include 'templates/footer.php';

@@ -3,8 +3,8 @@
     function conectarDB() : mysqli {
         $hostname="localhost";
         $username="root";
-        $password="";
-        $database="";
+        $password="upiicsa+23";
+        $database="inmobiliariagallardo";
         $db= new mysqli($hostname,$username,$password,$database);
 
         if(!$db){

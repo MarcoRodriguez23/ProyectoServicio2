@@ -1,11 +1,11 @@
 <?php
-    require 'templates/config/conexion.php';
-    $db = conectarDB();
-    //obteniendo los terrenos
-    $query = "SELECT * FROM terrenos";
-    $terrenos = mysqli_query($db, $query);
+    // require 'templates/config/conexion.php';
+    // $db = conectarDB();
+    // //obteniendo los terrenos
+    // $query = "SELECT * FROM terrenos";
+    // $terrenos = mysqli_query($db, $query);
 
-    include 'templates/header.php';
+    // include 'templates/header.php';
 
 ?>
 
@@ -59,5 +59,5 @@
 
 
 <?php
-    mysqli_close($db);
-    include 'templates/footer.php';
+    // mysqli_close($db);
+    // include 'templates/footer.php';

@@ -1,12 +1,12 @@
-<?php
-    require 'templates/config/conexion.php';
-    $db = conectarDB();
-    //obteniendo los servicios
-    $query = "SELECT * FROM servicios";
-    $servicios = mysqli_query($db, $query);
+<!-- <?php
+    // require 'templates/config/conexion.php';
+    // $db = conectarDB();
+    // //obteniendo los servicios
+    // $query = "SELECT * FROM servicios";
+    // $servicios = mysqli_query($db, $query);
 
-    include 'templates/header.php';
-?>
+    // include 'templates/header.php';
+?> -->
 
     <main>
         <div class="banner" id="bannerServicios">
@@ -28,6 +28,5 @@
     </main>
 
 <?php
-    mysqli_close($db);
-    include 'templates/footer.php';
-    
+    // mysqli_close($db);
+    // include 'templates/footer.php';

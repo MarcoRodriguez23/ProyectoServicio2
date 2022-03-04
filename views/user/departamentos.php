@@ -1,11 +1,11 @@
 <?php
-    require 'templates/config/conexion.php';
-    $db = conectarDB();
-    //obteniendo los departamentos
-    $query = "SELECT * FROM departamentos";
-    $departamentos = mysqli_query($db, $query);
+    // require 'templates/config/conexion.php';
+    // $db = conectarDB();
+    // //obteniendo los departamentos
+    // $query = "SELECT * FROM departamentos";
+    // $departamentos = mysqli_query($db, $query);
 
-    include 'templates/header.php';
+    // include 'templates/header.php';
 
 ?>
 
@@ -56,5 +56,5 @@
 
 
 <?php
-    mysqli_close($db);
-    include 'templates/footer.php';
+    // mysqli_close($db);
+    // include 'templates/footer.php';

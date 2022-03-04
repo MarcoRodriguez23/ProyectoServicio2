@@ -1,16 +1,16 @@
-<?php
-    require 'templates/config/conexion.php';
-    $db = conectarDB();
-    //obteniendo los departamentos
-    $ConsultaD = "SELECT id,calle,delegacion,colonia FROM departamentos";
-    $ConsultaT = "SELECT id,calle,delegacion,colonia FROM terrenos";
-    $ConsultaI = "SELECT id,calle,delegacion,colonia FROM inmuebles";
-    $dep = mysqli_query($db, $ConsultaD);
-    $inm = mysqli_query($db, $ConsultaI);
-    $terr = mysqli_query($db, $ConsultaT);
+<!-- <?php
+    // require 'templates/config/conexion.php';
+    // $db = conectarDB();
+    // //obteniendo los departamentos
+    // $ConsultaD = "SELECT id,calle,delegacion,colonia FROM departamentos";
+    // $ConsultaT = "SELECT id,calle,delegacion,colonia FROM terrenos";
+    // $ConsultaI = "SELECT id,calle,delegacion,colonia FROM inmuebles";
+    // $dep = mysqli_query($db, $ConsultaD);
+    // $inm = mysqli_query($db, $ConsultaI);
+    // $terr = mysqli_query($db, $ConsultaT);
 
-    include 'templates/header.php';
-?>
+    // include 'templates/header.php';
+?> -->
 
     <main id="index">
         <div class="banner" id="bannerIndex">
@@ -187,6 +187,3 @@
         </div>
     </div> -->
 
-<?php
-    mysqli_close($db);
-    include 'templates/footer.php';

@@ -18,14 +18,14 @@
                 <img src="build/img/barras.svg" alt="icono-responsive">
             </div>
             <nav class="navegacion">
-                <a href="index.php">HOME</a>
-                <a href="nosotros.php">NOSOTROS</a>
-                <a href="servicios.php">SERVICIOS</a>
-                <a href="inmuebles.php">INMUEBLES</a>
-                <a href="departamentos.php">DEPARTAMENTOS</a>
-                <a href="terrenos.php">TERRENOS</a>
-                <a href="blog.php">BLOG</a>
-                <a href="contacto.php">CONTACTO</a>
+                <a href="/">HOME</a>
+                <a href="/nosotros">NOSOTROS</a>
+                <a href="/servicios">SERVICIOS</a>
+                <a href="/inmuebles">INMUEBLES</a>
+                <a href="/departamentos">DEPARTAMENTOS</a>
+                <a href="/terrenos">TERRENOS</a>
+                <a href="/blog">BLOG</a>
+                <a href="/contacto">CONTACTO</a>
             </nav>
         </div> <!--.barra-->
     </header>
@@ -33,6 +33,40 @@
         //aqui se va ir agregando el contenido de cada pagina
         echo $contenido;
     ?>
+    <footer class="footer">
+        <div class="footer-superior">
+            <div class="footer-logo">
+                <a href="index.php" class="logotipo">
+                    <img  src="build/img/logo.jpeg" alt="Logotipo">
+                </a>
+            </div>
+            <div class="footer-informacion">
+                <p>
+                    Cuauhtémoc, Ciudad de México
+                </p>
+                <p>
+                    tel: 55-7379-2800
+                </p>
+            </div>
+            <div class="footer-socialMedia">
+                <h4>Encuentranos en:</h4>
+                <div class="socialMedia-imagenes">
+                    <a href="#">
+                        <img src="../build/img/facebook.svg" alt="Facebook">
+                    </a>
+                    <a href="#">
+                        <img src="../build/img/mercadolibre.png" alt="Mercado libre">
+                    </a>
+                    <a href="https://wa.me/5573792800" target="_blank">
+                        <img src="../build/img/whatsapp.svg" alt="whatsapp">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">
+            Todos los derechos reservados <?php echo date('Y'); ?> &copy;
+        </p>
+    </footer>
 </body>
     <script src="/build/js/bundle.js"></script>
 </html>
