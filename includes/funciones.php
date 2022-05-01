@@ -1,8 +1,11 @@
 <?php
 
-define('TEMPLATES_URL', __DIR__. '../templates');
+
+define('TEMPLATES_URL', __DIR__. '/templates');
 define('FUNCIONES_URL', __DIR__. 'funciones.php');
 define('CARPETA_IMAGENES',$_SERVER['DOCUMENT_ROOT'].'/imagenes/');
+define('CARPETA_CONTRATOS',$_SERVER['DOCUMENT_ROOT'].'/contratos/');
+
 
 // function incluirTemplate(string $nombre, bool $inicio = false){
 //     include TEMPLATES_URL."/${nombre}.php";
@@ -16,7 +19,9 @@ function estaAutenticado(){
 }
 
 function debuguear($variable){
+    echo "<pre>";
     var_dump($variable);
+    echo "</pre>";
     exit;
 }
 
@@ -27,7 +32,7 @@ function s($html){
 }
 
 function validarTipoContenido($tipo){
-    $tipos=['propiedad','representante','vendedor'];
+    $tipos=['propiedad','vendedor','agente'];
 
     return in_array($tipo,$tipos);
 }
@@ -46,6 +51,14 @@ function mostrarNotificacion($codigo){
 
         case 3:
             $mensaje = "Eliminado Correctamente";
+            break;
+
+        case 4:
+            $mensaje = "Cita creada correctamente";
+            break;
+        
+        case 5:
+            $mensaje = "Venta creada correctamente";
             break;
 
         default:

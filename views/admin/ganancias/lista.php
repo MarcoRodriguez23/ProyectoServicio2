@@ -1,52 +1,66 @@
+<?php
+    // debuguear($ventas);
+?>
 <main>
-    <h2>Ganancias</h2>
-    <form action="" method="post" class="contenedor filtro contenido-centrado">
-        <select name="representante" id="representante">
-            <option value="" selected disabled>Representante</option>
-            <option value="representante-1">Representante X</option>
-            <option value="representante-2">Representante X</option>
-        </select>
-        <select name="vendedor" id="vendedor">
-            <option value="" selected disabled>Vendedor</option>
-            <option value="vendedor-1">Vendedor 1</option>
-            <option value="vendedor-2">Vendedor 2</option>
-        </select>
-        <select name="inmueble" id="inmueble">
-            <option value="" selected disabled>Inmueble</option>
-            <option value="inmueble-1">Inmueble 1</option>
-            <option value="inmueble-2">Inmueble 2</option>
-        </select>
-        <select name="fecha" id="fecha">
-            <option value="" selected disabled>Fecha</option>
-            <option value="fecha-1">DD/MM/AA</option>
-            <option value="fecha-2">DD/MM/AA</option>
-        </select>
-
-        <button type="submit">Buscar</button>
-    </form>
+    <h2>Ventas</h2>
     <div class=" tabla contenedor table-responsive">
         
         <table>
             <tr>
-                <th>Representante</th>
-                <th>Comisión</th>
-                <th>Vendedor</th>
-                <th>Comisión</th>
-                <th>Inmueble</th>
+                <th>Registro</th>
+                <th>Responsable de la venta</th>
+                <th>Propiedad</th>
                 <th>Precio</th>
+                <th>Comisión</th>
                 <th>Fecha</th>
-                <th>Lugar</th>
+                <th>Contrato</th>
             </tr>
-            <tr>
-                <td>Nombre y apellido</td>
-                <td>$$$$$</td>
-                <td>Nombre y apellido</td>
-                <td>$$$$$</td>
-                <td>inmueble X</td>
-                <td>$$$$$</td>
-                <td>dd/mm/aaaa</td>
-                <td>dirección</td>
-            </tr>
+            <?php foreach($ventas as $venta): ?>
+            <?php foreach($propiedades as $propiedad): ?>
+            <?php foreach($direcciones as $direccion): ?>
+            <?php foreach($trabajadores as $trabajador): ?>
+                <?php if($venta->idPropiedad === $propiedad->id && $propiedad->id === $direccion->id): ?>
+                <?php if($venta->idEncargado === $trabajador->id): ?>
+                <tr>
+                    <td><?php echo $venta->id; ?></td>
+                    <td>
+                        <div>
+                            <?php if($trabajador->nivel == 1): ?>
+                                <img src="/build/img/Iconos/admin.svg" alt="admin">
+                            <?php endif; ?>
+                            <?php if($trabajador->nivel == 2): ?>
+                                <img src="/build/img/Iconos/agente.svg" alt="agente">
+                            <?php endif; ?>
+                            <?php if($trabajador->nivel == 3): ?>
+                                <img src="/build/img/Iconos/vendedor.svg" alt="vendedor">
+                            <?php endif; ?>
+                            <?php echo $trabajador->nombre." ".$trabajador->apellido; ?>
+                        </div>
+                        
+                    </td>
+                    <td class="enlace-tabla">
+                        <a href="/admin/propiedades/info?id=<?php echo $propiedad->id; ?>">
+                        <?php echo $direccion->calle.", ".$direccion->colonia.", ".$direccion->municipioDelegacion.", ".$direccion->estado; ?>
+                        </a>
+                    </td>
+                    <td class="precio"><?php echo $propiedad->precio; ?></td>
+                    <td><?php echo $propiedad->comision; ?>%</td>
+                    <td>
+                        <?php
+                            $date = date_create($venta->fecha);
+                            echo date_format($date,"d/m/Y") ;
+                        ?>
+                    </td>
+                    <td class="enlace-tabla">
+                        <a  href="/contratos/<?php echo $venta->contrato; ?>" target="_blank">Contrato</a>
+                    </td>
+                </tr>
+                <?php endif; ?> 
+                <?php endif; ?> 
+            <?php endforeach; ?>
+            <?php endforeach; ?>
+            <?php endforeach; ?>
+            <?php endforeach; ?>
         </table> 
     </div>
 </main>

@@ -9,18 +9,20 @@ body {
     font-family: $fuente_principal;
     font-size: 1.6rem;
     line-height: 1.8;
+    background-color: $blanco-gris;
+
+    &.fijar-body{
+        overflow: hidden;
+    }
 }
 p {
     color: $negro;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-align: justify;
-    // font-weight: $delgada;
-    @include tablet{
-        font-size: 1.8rem;
-    }
+    font-weight: $delgada;
 }
 .contenedor {
-    width: 90%;
+    width: 95%;
     max-width: 130rem;
     margin: 0 auto;
 }
@@ -35,9 +37,9 @@ picture {
     display: block;
 }
 
-h1, h2, h3,h4 {
+h1, h2, h3 {
     font-family: $fuente_principal;
-    margin: calc($separacion / 4) 0;
+    margin: $separacion / 4 0;
     font-weight: $regular;
     text-align: center;
 }
@@ -52,5 +54,5 @@ h3 {
     font-size: 3rem;
 }
 h4 {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
 }

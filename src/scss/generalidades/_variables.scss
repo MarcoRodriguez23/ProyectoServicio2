@@ -1,7 +1,8 @@
 //importe de tipografia e iconos
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');;
+
 // Fuentes
-$fuente_principal: 'Lato', sans-serif;
+$fuente_principal: 'Poppins', sans-serif;
 
 // Tamaño de Media Queries
 $telefono: 480px;
@@ -9,23 +10,23 @@ $tablet: 768px;
 $desktop: 1024px;
 
 // Colores
-$negro: #1b1b1b;
+$negro: #1e1e1e;
+$gris: rgb(170, 186, 194);
+$blanco-gris: #f3f3f3;
 $blanco: #FFFFFF;
-$rojo: #fc4646c9;
-$rojo-intenso: #a30000ee;
-$gris: #9fa4a7;
-$cafe: #A18262;
-$blanco-gris:#f1f0f0;
-$verde: #38e455c9;
-$verde-intenso: #05a820e8;
-$verdePrincipal: #09302b;
-$amarillo: #f1e420ea;
-$amarillo-intenso: #fdc200fd;
-$salmon: #e16162;
-$azul: #7386d5;
+$azul: #396c8a;
 $azul-intenso: #0003b6c7;
-// $naranja: #f3823c;
-$naranja: #7f00b2;
+$rojo: #be1022;
+$rojo-intenso: #790a15;
+$verde: rgb(17, 159, 17);
+$verde-intenso: #1c762e;
+$amarillo: #fdaf1c;
+$amarillo-intenso: #f3f63a;
+$morado: #592fa9;
+$morado-intenso: #2d125f;
+$cafe :#9c7761;
+$naranja: #E88C15;
+
 
 $separacion: 5rem;
 

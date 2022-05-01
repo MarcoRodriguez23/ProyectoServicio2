@@ -20,6 +20,10 @@ class activeRecord{
         return static::$errores;
     }
 
+    public static function setAlerta($tipo, $mensaje) {
+        static::$errores[$tipo][] = $mensaje;
+    }
+
     public function validar(){
         static::$errores=[];
         return static::$errores;
@@ -34,6 +38,7 @@ class activeRecord{
             //crear
             $resultado=$this->crear();
         }
+        // debuguear($resultado);
         return $resultado;        
     }
 
@@ -50,6 +55,8 @@ class activeRecord{
         $query .= join(', ', $valores);
         $query .= " WHERE id = '" . self::$db->escape_string($this->id). "' ";
         $query .= " LIMIT 1";
+        // debuguear($query);
+        
 
         $resultado=self::$db->query($query);
 
@@ -64,9 +71,10 @@ class activeRecord{
         //insertando informacion a la base de datos
         $insert = "INSERT INTO ". static::$tabla ." ( ";
         $insert .=  join(', ',array_keys($atributos)); 
-        $insert .= " ) values (' ";
+        $insert .= " ) values ('";
         $insert .=  join("', '",array_values($atributos)); 
         $insert .= " ') ";
+        // debuguear($insert);
 
         $resultado = self::$db->query($insert);
         
@@ -110,9 +118,9 @@ class activeRecord{
     //eliminar el archivo
     public function borrarImagen(){
         //comprobar si existe el archivo
-        $existe = file_exists("CARPETA_IMAGENES" . $this->imagen);
+        $existe = file_exists(CARPETA_IMAGENES . $this->foto);
         if($existe){
-            unlink("CARPETA_IMAGENES" . $this->imagen);
+            unlink(CARPETA_IMAGENES . $this->foto);
         }
     }
 
@@ -150,6 +158,20 @@ class activeRecord{
         return array_shift($resultado);
     }
 
+    // Busca un registro por un columna
+    public static function where($columna,$valor) {
+        $query = "SELECT * FROM " . static::$tabla  ." WHERE ${columna} = '${valor}'";
+        $resultado = self::consultarSQL($query);
+        return array_shift( $resultado ) ;
+    }
+
+     // Busca todos los registros por un columna
+     public static function whereAll($columna,$valor) {
+        $query = "SELECT * FROM " . static::$tabla  ." WHERE ${columna} = '${valor}'";
+        $resultado = self::consultarSQL($query);
+        return $resultado ;
+    }
+
     public static function consultarSQL($query){
         //consultar la bd
         $resultado = self::$db->query($query);
@@ -175,6 +197,7 @@ class activeRecord{
     }
     //sincronizar el objeto en memoria con los cambios realizados por el usuario
     public function sincronizar($args=[]){
+        // debuguear($args);
         foreach ($args as $key => $value) {
             if(property_exists($this,$key) && !is_null($value)){
                 $this->$key=$value;

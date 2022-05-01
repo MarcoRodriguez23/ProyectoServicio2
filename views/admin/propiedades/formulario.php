@@ -1,237 +1,600 @@
-<fieldset id="paso-1" class="seccion mostrar-seccion">
-    <legend>Dirección</legend>
 
-    <label for="est">Estado</label>
-    <input type="text" placeholder="Estado" id="est">
-
-    <label for="municipio-delegacion">Municipio o delegación</label>
-    <input type="text" placeholder="municipio-delegacion" id="municipio-delegacion">
-
-    <label for="calle">Calle</label>
-    <input type="text" placeholder="Calle" id="calle">
-
-    <label for="colonia">Colonia</label>
-    <input type="text" placeholder="colonia" id="colonia">
-
-
-    <label for="num-ext">Numero exterior</label>
-    <input type="number" placeholder="ejem: 420" id="num-ext" min="1">
-
-    <label for="ubicacion">Link de ubicación</label>
-    <input type="text" placeholder="Enlace de google maps" id="ubicacion">
-    
-</fieldset>
-
-<fieldset id="paso-2" class="seccion">
-    <legend>Valor de la propiedad</legend>
-
-    <label for="precio">Precio</label>
-    <input type="number" placeholder="ejem: 1000000" id="precio" min="1" name="precio">
-
-    <div class="contenedor">
-        <label for="aumento-disminucion">Agregar</label>
-        <div class="opciones">
-            <input name="aumento-disminucion" type="radio" value="Descuento">
-            <label for="descuento">Descuento</label>
-            <input name="aumento-disminucion" type="radio" value="Aumento"> 
-            <label for="aumento">Aumento</label>
-        </div>
+<!--PARTE DONDE SE ESCOGE EL TIPO DE PROPIEDAD-->
+<fieldset id="fieldSetTipoPropiedad">
+    <legend>Tipo de propiedad</legend>
+    <div>
+    <select id="tipoPropiedad" name="propiedad[tipoPropiedad]">
+        <option value="" disabled 
+        <?php echo ($propiedad->tipoPropiedad === "") ? 'selected' : ''; ?>
+        >--Selecciona una opción--</option>
+        <?php foreach ($tipoPropiedad as $row) :?>
+            <option 
+            <?php echo ($propiedad->tipoPropiedad === $row->id) ? 'selected' : ''; ?>
+            value="<?php echo s($row->id); ?>"><?php echo s($row->tipo); ?></option>
+        <?php endforeach; ?>
+    </select>
+    <?php echo isset($erroresPropiedad["tipoPropiedad"]) ? "<p>".$erroresPropiedad["tipoPropiedad"]."</p>" : "" ?>
     </div>
-    
-    <div id="tipo-a-agregar" class="contenedor">
+</fieldset>
 
+<fieldset id="fieldSetStatus">
+    <legend>Disponible para: </legend>
+    <div>
+    <select id="status" name="propiedad[status]">
+        <option value="" disabled selected>--Selecciona una opción--</option>
+        <?php foreach ($status as $row) :?>
+            <?php if($row->id !=2): ?>
+                <option 
+                <?php echo ($propiedad->status === $row->id) ? 'selected' : ''; ?>
+                value="<?php echo s($row->id); ?>"><?php echo ucfirst(s($row->estado)); ?></option>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </select>
+    <?php echo isset($erroresPropiedad["status"]) ? "<p>".$erroresPropiedad["status"]."</p>" : "" ?>
     </div>
-    
-    <div id="denominacion" class="contenedor">
+</fieldset>
 
+<fieldset id="fieldSetRemodelacion">
+    <legend>Remodelación</legend>
+    <div>
+    <select name="propiedad[categoria]">
+        <option value="" disabled selected>--Selecciona una opción--</option>
+        <?php foreach ($categorias as $row) :?>
+            <?php if($row->id !='0'): ?>
+                <option 
+                <?php echo ($propiedad->categoria === $row->id) ? 'selected' : ''; ?>
+                value="<?php echo s($row->id); ?>"><?php echo ucfirst(s($row->tipo)); ?></option>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </select>
+    <?php echo isset($erroresPropiedad["categoria"]) ? "<p>".$erroresPropiedad["categoria"]."</p>" : "" ?>
+    </div>
+</fieldset>
+
+<!--PARTE DONDE SE AGREGA INFORMACION SOBRE LA UBICACION DE LA PROPIEDAD-->
+<fieldset id="fieldSetUbicacion" class="dosColumnas">
+    <legend>Ubicación</legend>
+    <div>
+        <label for="estado">Estado</label>
+        <input 
+            type="text" 
+            placeholder="Ej: CDMX" 
+            name="direccion[estado]" id="estado" 
+            value="<?php echo s($direccion->estado); ?>"
+        >
+        <?php echo isset($erroresDireccion["estado"]) ? "<p>".$erroresDireccion["estado"]."</p>" : "" ?>
     </div>
 
-    <label for="valor-final">Valor final:</label>
-    <input type="number" name="valor-final" disabled placeholder="$$$$">
+    <div>
+        <label for="municipioDelegacion">Municipio / Alcaldía</label>
+        <input 
+            type="text" 
+            placeholder="Ej: Iztacalco"
+            name="direccion[municipioDelegacion]" 
+            id="municipioDelegacion" 
+            value="<?php echo s($direccion->municipioDelegacion); ?>"
+        >
+        <?php echo isset($erroresDireccion["municipioDelegacion"]) ? "<p>".$erroresDireccion["municipioDelegacion"]."</p>" : "" ?>
+    </div>
 
+    <div>
+        <label for="calle">Calle</label>
+        <input 
+            type="text" 
+            placeholder="Ej: Avenida Patria" 
+            name="direccion[calle]" 
+            id="calle"
+            value="<?php echo s($direccion->calle); ?>"
+        >
+        <?php echo isset($erroresDireccion["calle"]) ? "<p>".$erroresDireccion["calle"]."</p>" : "" ?>
+    </div>
+
+    <div>
+        <label for="colonia">Colonia</label>
+        <input 
+            type="text" 
+            placeholder="Ej: Solidaridad" 
+            name="direccion[colonia]" 
+            id="colonia"
+            value="<?php echo s($direccion->colonia); ?>"
+        >
+        <?php echo isset($erroresDireccion["colonia"]) ? "<p>".$erroresDireccion["colonia"]."</p>" : "" ?>
+    </div>
+
+    <div>
+        <label for="numInterior">Número interior</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 325" 
+            min="0" 
+            name="direccion[numInterior]" 
+            id="numInterior"
+            value="<?php echo s($direccion->numInterior); ?>"
+        >
+        <?php echo isset($erroresDireccion["numInterior"]) ? "<p>".$erroresDireccion["numInterior"]."</p>" : "" ?>
+    </div>
+
+    <div>
+        <label for="numExterior">Número exterior</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 230" 
+            min="0" 
+            name="direccion[numExterior]" 
+            id="numExterior"
+            value="<?php echo s($direccion->numExterior); ?>"
+        >
+        <?php echo isset($erroresDireccion["numExterior"]) ? "<p>".$erroresDireccion["numExterior"]."</p>" : "" ?>
+    </div>
+
+    <div>
+        <label for="linkGoogle">Enlace de Google Maps (opcional)</label>
+        <input 
+            type="text" 
+            placeholder="Link de Google Maps" 
+            name="direccion[linkGoogle]" 
+            id="linkGoogle"
+            value="<?php echo s($direccion->linkGoogle); ?>"
+        >
+        <?php echo isset($erroresDireccion["linkGoogle"]) ? "<p>".$erroresDireccion["linkGoogle"]."</p>" : "" ?>
+    </div>
+
+    <div>
+        <label for="link360">Enlace de recorrido 360° (opcional)</label>
+        <input 
+            type="text" 
+            placeholder="Link de recorrido" 
+            name="direccion[link360]" 
+            id="link360"
+            value="<?php echo s($direccion->link360); ?>"
+        >
+        <?php echo isset($erroresDireccion["link360"]) ? "<p>".$erroresDireccion["link360"]."</p>" : "" ?>
+    </div>
+
+    <div>
+        <label for="CP">Código Postal</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 56432" 
+            name="direccion[CP]" 
+            id="CP"
+            value="<?php echo s($direccion->CP); ?>"
+        >
+        <?php echo isset($erroresDireccion["CP"]) ? "<p>".$erroresDireccion["CP"]."</p>" : "" ?>
+    </div>
+
+    <div>
+        <label for="mt2">Metros Cuadrados</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 80.30" 
+            min="0" 
+            name="propiedad[mt2]" 
+            id="mt2" 
+            step=".01"
+            value="<?php echo s($propiedad->mt2); ?>"
+        >
+        <?php echo isset($erroresPropiedad["mt2"]) ? "<p>".$erroresPropiedad["mt2"]."</p>" : "" ?>
+    </div>
+    <div>
+        <label for="mt2Construccion">Metros Cuadrados Construidos</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 69.40" 
+            min="0" 
+            name="propiedad[mt2Construccion]" 
+            id="mt2Construccion" 
+            step=".01"
+            value="<?php echo s($propiedad->mt2Construccion); ?>"
+        >
+        <?php echo isset($erroresPropiedad["mt2Construccion"]) ? "<p>".$erroresPropiedad["mt2Construccion"]."</p>" : "" ?>
+    </div>
 </fieldset>
 
-<fieldset id="paso-3" class="seccion">
-    <legend>Fotografías</legend>
+<!--PARTE DONDE SE DESCRIBE LA PROPIEDAD-->
+<fieldset id="fieldSetDescripcionPropiedad" class="dosColumnas">
+    <legend>
+        Descripción de la propiedad
+    </legend>
+    <div>
+        <label for="numPisos">Pisos</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 3" 
+            min="0" 
+            name="propiedad[numPisos]" 
+            id="numPisos"
+            value="<?php echo s($propiedad->numPisos); ?>"
+        >
+        <?php echo isset($erroresPropiedad["numPisos"]) ? "<p>".$erroresPropiedad["numPisos"]."</p>" : "" ?>
+    </div>
 
-    <label for="foto">Subir Archivo</label>
-    <input type="file" id="foto" accept="image/jpeg, image/png" multiple name="imagenes[]">
+    <div>
+        <label for="año">Año de construcción</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 2020" 
+            min="0" 
+            name="propiedad[año]" 
+            id="año"
+            value="<?php echo s($propiedad->año); ?>"
+        >
+        <?php echo isset($erroresPropiedad["año"]) ? "<p>".$erroresPropiedad["año"]."</p>" : "" ?>
+    </div>
 
-</fieldset>
+    <div>
+        <label for="habitaciones">Habitaciones</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 4" 
+            min="0" 
+            name="propiedad[habitaciones]" 
+            id="habitaciones"
+            value="<?php echo s($propiedad->habitaciones); ?>"
+        >
+        <?php echo isset($erroresPropiedad["habitaciones"]) ? "<p>".$erroresPropiedad["habitaciones"]."</p>" : "" ?>
+    </div>
 
-<fieldset id="paso-4" class="seccion">
-    <legend>Descripción de la propiedad</legend>
+    <div>
+        <label for="baños">Baños</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 3" 
+            min="0" 
+            name="propiedad[baños]" 
+            id="baños"
+            value="<?php echo s($propiedad->baños); ?>"
+        >
+        <?php echo isset($erroresPropiedad["baños"]) ? "<p>".$erroresPropiedad["baños"]."</p>" : "" ?>
+    </div>
 
-    <label for="edad">Edad de la propiedad</label>
-    <input type="number" placeholder="ejem: 10" id="edad" min="1">
+    <div>
+        <label for="servicioH">Habitaciones de servicio (opcional)</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 1" 
+            min="0" 
+            name="propiedad[servicioH]" 
+            id="servicioH"
+            value="<?php echo s($propiedad->servicioH); ?>"
+        >
+        <?php echo isset($erroresPropiedad["servicioH"]) ? "<p>".$erroresPropiedad["servicioH"]."</p>" : "" ?>
+    </div>
 
-    <label for="pisos">Pisos</label>
-    <input type="number" placeholder="ejem: 3" id="pisos" min="1">
+    <div>
+        <label for="servicioP">Patio de servicio (opcional)</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 1" 
+            min="0" 
+            name="propiedad[servicioP]" 
+            id="servicioP"
+            value="<?php echo s($propiedad->servicioP); ?>"
+            >
+        <?php echo isset($erroresPropiedad["servicioP"]) ? "<p>".$erroresPropiedad["servicioP"]."</p>" : "" ?>
+    </div>
 
-    <label for="habitaciones">Habitaciones:</label>
-    <input type="number" 
-    id="habitaciones" 
-    name="propiedad[habitaciones]" 
-    placeholder="ejem: 3" 
-    min="1" max="10" 
-    value="<?php echo $propiedad->habitaciones; ?>">
+    <div>
+        <label for="idEstacionamiento">Tipo de estacionamiento</label>
+        <select name="propiedad[idEstacionamiento]" id="idEstacionamiento">
+            <option value="" disabled selected>--Seleccione un tipo de estacionamiento--</option>
+            <?php
+                foreach ($estacionamientos as $estacionamiento):?>
+                <?php if($estacionamiento->id != '0'): ?>  
+                    <option
+                        <?php echo $propiedad->idEstacionamiento === $estacionamiento->id ? 'selected' : ''; ?>
+                        value="<?php echo s($estacionamiento->id); ?>"
+                    >
+                    <?php echo s($estacionamiento->tipo); ?>
+                    </option>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </select>
+        <?php echo isset($erroresPropiedad["idEstacionamiento"]) ? "<p>".$erroresPropiedad["idEstacionamiento"]."</p>" : "" ?>
+    </div>
+
+
+    <div>
+        <label for="numEstacionamientos">Número de cajones</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 2" 
+            min="0" 
+            name="propiedad[numEstacionamientos]" 
+            id="numEstacionamientos"
+            value="<?php echo s($propiedad->numEstacionamientos); ?>"
+        >
+        <?php echo isset($erroresPropiedad["numEstacionamientos"]) ? "<p>".$erroresPropiedad["numEstacionamientos"]."</p>" : "" ?>
+    </div>
+
+    <div>
+        <label for="numIdEstacionamiento">Número de estacionamiento (opcional)</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 280" 
+            min="0" 
+            name="propiedad[numIdEstacionamiento]" 
+            id="numIdEstacionamiento"
+            value="<?php echo s($propiedad->numIdEstacionamiento); ?>"
+        >
+        <?php echo isset($erroresPropiedad["numIdEstacionamiento"]) ? "<p>".$erroresPropiedad["numIdEstacionamiento"]."</p>" : "" ?>
+    </div>
+
     
-    <label for="wc">wc:</label>
-    <input type="number" 
-    id="wc" 
-    name="propiedad[wc]" 
-    placeholder="ejem: 3" 
-    min="1" max="10" 
-    value="<?php echo $propiedad->wc; ?>">
-
-    <label for="mt2">Metros cuadrados:</label>
-    <input type="number" 
-    id="mt2" 
-    name="propiedad[mt2]" 
-    placeholder="ejem: 50" 
-    min="5" 
-    value="<?php echo $propiedad->mt2; ?>">
-
-    <label for="cuartosServicio">Cuartos de servicio:</label>
-    <input type="number" 
-    id="cuartosServicio" 
-    name="propiedad[cuartosServicio]" 
-    placeholder="ejem: 2" 
-    min="0" 
-    value="<?php echo $propiedad->cuartosServicio; ?>">
-
-    <label for="patiosServicio">Patios de servicio: </label>
-    <input type="number" 
-    id="patiosServicio" 
-    name="propiedad[patiosServicio]" 
-    placeholder="ejem: 2" 
-    min="0" 
-    value="<?php echo $propiedad->patiosServicio; ?>">
-  
 </fieldset>
 
-<!-- <fieldset id="paso-5" class="seccion">
+<!--PRECIO DE LA PROPIEDAD-->
+<fieldset id="fieldSetPrecio">
+    <legend>Precio</legend>
+    <div>
+        <label for="precio">Cantidad</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 1800000" 
+            min="10000" 
+            name="propiedad[precio]" 
+            id="precio"
+            value="<?php echo s($propiedad->precio); ?>"
+        >
+        <?php echo isset($erroresPropiedad["precio"]) ? "<p>".$erroresPropiedad["precio"]."</p>" : "" ?>
+    </div>
+    <div>
+        <label for="mantenimiento">Precio de mantenimiento</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 5000" 
+            min="0" 
+            name="propiedad[mantenimiento]" 
+            id="mantenimiento"
+            value="<?php echo s($propiedad->mantenimiento); ?>"
+        >
+        <?php echo isset($erroresPropiedad["mantenimiento"]) ? "<p>".$erroresPropiedad["mantenimiento"]."</p>" : "" ?>
+    </div>
+</fieldset>
+
+<!--INFORMACION ADICIONAL EN CASO DE QUE SEA DEPARTAMENTO-->
+<fieldset id="fieldSetDepartamento" class="dosColumnas">
     <legend>Departamento</legend>
 
-    <label for="piso">Piso</label>
-    <input type="text" placeholder="piso" id="piso">
-
-    <label for="numDep">Num. de departamento</label>
-    <input type="number" placeholder="ejem: 123" id="numDep" min="1">
-
-    <label for="elevador">Elevador</label>
-    <input type="number" placeholder="ejem: 2" id="elevador" min="0">
-</fieldset> -->
-
-<fieldset class="seccion" id="paso-5">
-    <legend>Estacionamiento</legend>
-
-    <label for="tipo-estacionamiento">Tipo</label>
-    <div class="opciones"> 
-        <input name="estacionamiento" type="radio" value="1">
-        <label for="est-techado">Techado</label>
-
-        <input name="estacionamiento" type="radio" value="2">
-        <label for="est-sin-techar">Sin techar</label>
-
-        <input name="estacionamiento" type="radio" value="3">
-        <label for="est-calle">Calle</label>  
-
-        <input name="estacionamiento" type="radio" value="4">
-        <label for="est-mecanico">Mecánico</label>  
-
-        <input name="estacionamiento" type="radio" value="5">
-        <label for="sin-est">No tiene</label>  
+    <div>
+        <label for="piso">Número de piso</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 1" 
+            min="0" 
+            name="propiedad[piso]" 
+            id="piso"
+            value="<?php echo s($propiedad->piso); ?>"
+        >
+        <?php echo isset($erroresPropiedad["piso"]) ? "<p>".$erroresPropiedad["piso"]."</p>" : "" ?>
     </div>
 
-    <label for="estacionamiento">Cantidad</label>
-    <input type="number" 
-    id="estacionamiento" 
-    name="propiedad[estacionamiento]" 
-    placeholder="ejem: 2" 
-    min="5" 
-    value="<?php echo $propiedad->estacionamiento; ?>">
-
-</fieldset>
-
-<fieldset class="seccion" id="paso-6">
-    <legend>Muebles</legend>
-    <div class="opciones">
-        <input type="checkbox" id="sala">
-        <label for="sala">Sala</label>
-
-        <input type="checkbox" id="lavadora">
-        <label for="lavadora">Lavadora</label>
-
-        <input type="checkbox" id="cocina">
-        <label for="cocina">Cocina</label>
-
-        <input type="checkbox" id="boiler">
-        <label for="boiler">Boiler</label>
-
-        <input type="checkbox" id="camas">
-        <label for="camas">Camas</label>
-
-        <input type="checkbox" id="roperos">
-        <label for="roperos">Roperos</label>
+    <div>
+        <label for="numElevadores">Elevadores</label>
+        <input 
+            type="number" 
+            placeholder="Ej: 1" 
+            min="0" 
+            name="propiedad[numElevadores]" 
+            id="numElevadores"
+            value="<?php echo s($propiedad->numElevadores); ?>"
+        >
+        <?php echo isset($erroresPropiedad["numElevadores"]) ? "<p>".$erroresPropiedad["numElevadores"]."</p>" : "" ?>
     </div>
-
 </fieldset>
 
-<fieldset class="seccion" id="paso-7">
-    <legend>Amenidades</legend>
-    <div class="opciones">
-        <input type="checkbox" id="garden">
-        <label for="garden">Roof garden</label>
-
-        <input type="checkbox" id="uso-multiple">
-        <label for="uso-multiple">Sala de usos multiples</label>
-
-        <input type="checkbox" id="gimnasio">
-        <label for="gimnasio">Gimnasio</label>
-
-        <input type="checkbox" id="cancha">
-        <label for="cancha">Canchas</label>
+<fieldset id="fieldSetComision" class="comision">
+    <legend>Comisión de venta</legend>
+    <div>
+        <label for="comision">Porcentaje de comisión (1 a 50)</label>
+        <input 
+            type="number" 
+            placeholder="ejem: 30" 
+            id="comision" 
+            min="1" 
+            name="propiedad[comision]"
+            max="50"
+            value="<?php echo s($propiedad->comision); ?>"
+        >
+        <?php echo isset($erroresPropiedad["comision"]) ? "<p>".$erroresPropiedad["comision"]."</p>" : "" ?>
     </div>
-
 </fieldset>
 
+<!--PARTE DONDE SE AGREGAN LOS MUEBLES Y AMENIDADES QUE TIENE LA PROPIEDAD-->
+<fieldset id="fieldSetMueblesAmenidades">
+    <legend>Muebles y amenidades</legend>
+    <div>
+        <div class="opciones"><!--Div para tener las opciones de los muebles-->
+            <div>
+                <input 
+                    type="checkbox" 
+                    name="muebles[sala]" 
+                    value="1"
+                    <?php echo $muebles->sala==1 ? 'checked' : ''; ?>
+                    >
+                <label>Sala</label>
+            </div>
 
+            <div>
+                <input 
+                    type="checkbox" 
+                    name="muebles[lavadora]" 
+                    value="1"
+                    <?php echo $muebles->lavadora==1 ? 'checked' : ''; ?>
+                    >
+                <label>Lavadora</label>
+            </div>    
 
-<fieldset class="seccion" id="paso-8">
-    <legend>Opciones de venta</legend>
+            <div>
+                <input 
+                    type="checkbox" 
+                    name="muebles[cocina]" 
+                    value="1"
+                    <?php echo $muebles->cocina==1 ? 'checked' : ''; ?>
+                    >
+                <label>Cocina</label>
+            </div>  
 
-    <div class="opciones">
-        <input type="checkbox" id="fovissste">
-        <label for="">FOVISSSTE</label>
+            <div>
+                <input 
+                    type="checkbox" 
+                    name="muebles[boiler]" 
+                    value="1"
+                    <?php echo $muebles->boiler==1 ? 'checked' : ''; ?>
+                    >
+                <label>Boiler</label>
+            </div>  
+
+            <div>
+                <input 
+                    type="checkbox" 
+                    name="muebles[camas]" 
+                    value="1"
+                    <?php echo $muebles->camas==1 ? 'checked' : ''; ?>
+                    >
+                <label>Camas</label>
+            </div>  
+
+            <div>
+                <input 
+                    type="checkbox" 
+                    name="muebles[roperos]" 
+                    value="1"
+                    <?php echo $muebles->roperos==1 ? 'checked' : ''; ?>
+                    >
+                <label>Roperos</label>
+            </div>  
+        </div>
         
-        <input type="checkbox" id="cofinavit">
-        <label for="">COFINAVIT</label>
-        
-        <input type="checkbox" id="credito">
-        <label for="">Credito bancario</label>
-        
-        <input type="checkbox" id="efectivo">
-        <label for="">Efectivo</label>
-        
-        <input type="checkbox" id="opcionesDeVenta">
-        <label for="">Todas las opciones</label>
+        <div class="opciones"><!--Div para tener las opciones de las amenidades-->
+            <div>
+                <input 
+                    type="checkbox" 
+                    name="amenidades[roffGarden]" 
+                    value="1"
+                    <?php echo $amenidades->roffGarden==1 ? 'checked' : ''; ?>
+                    >
+                <label>Roff Garden</label>
+            </div>     
+            <div>
+                <input 
+                    type="checkbox" 
+                    name="amenidades[salaDeUsosMultiples]" 
+                    value="1"
+                    <?php echo $amenidades->salaDeUsosMultiples==1 ? 'checked' : ''; ?>
+                    >
+                <label>Sala de usos multiples</label>
+            </div>   
+            <div>
+                <input 
+                    type="checkbox" 
+                    name="amenidades[gimnasio]" 
+                    value="1"
+                    <?php echo $amenidades->gimnasio==1 ? 'checked' : ''; ?>
+                    >
+                <label>Gimnasio</label>
+            </div>   
+            <div>
+                <input 
+                    type="checkbox" 
+                    name="amenidades[cancha]" 
+                    value="1"
+                    <?php echo $amenidades->cancha==1 ? 'checked' : ''; ?>
+                    >
+                <label>Cancha</label>
+            </div>   
+            <div>
+                <input 
+                    type="checkbox" 
+                    name="amenidades[calentadorSolar]" 
+                    value="1"
+                    <?php echo $amenidades->calentadorSolar==1 ? 'checked' : ''; ?>
+                    >
+                <label>Calentador Solar</label>
+            </div>   
+            <div>
+                <input 
+                    type="checkbox" 
+                    name="amenidades[alberca]" 
+                    value="1"
+                    <?php echo $amenidades->alberca==1 ? 'checked' : ''; ?>
+                    >
+                <label>Alberca</label>
+            </div> 
+        </div>
     </div>
-
 </fieldset>
 
-<fieldset class="seccion" id="paso-9">
-    <legend>Papeles</legend>
-
-    <div class="opciones">
-        <input type="checkbox" id="">
-        <label for="">Escritura pública</label>
-
-        <input type="checkbox" id="">
-        <label for="">Escritura privada</label>
-
-        <input type="checkbox" id="">
-        <label for="">Cesión de derechos</label>
+<!--PARTE DONDE SE AGREGAN LAS OPCIONES DE VENTA Y EL PAPEL DE LA PROPIEDAD-->
+<fieldset id="fieldSetEscritura">
+    <legend>Escritura y opciones de venta</legend>
+    <div>
+        <select name="propiedad[idEscritura]">
+            <option value="" disabled selected>--Selecciona un opción--</option>
+            <?php foreach ($escrituras as $escritura) :?>
+                <option 
+                <?php echo ($propiedad->idEscritura === $escritura->id) ? 'selected' : ''; ?>
+                value="<?php echo s($escritura->id); ?>"><?php echo s($escritura->tipo); ?></option>
+            <?php endforeach; ?>
+        </select>
+        <?php echo isset($erroresPropiedad["idEscritura"]) ? "<p>".$erroresPropiedad["idEscritura"]."</p>" : "" ?>
     </div>
     
+    
+    <div class="opciones">
+        <div>
+            <input 
+                type="checkbox" 
+                name="metodosventa[fovissste]" 
+                value="1"
+                <?php echo $metodosVenta->fovissste==1 ? 'checked' : '' ; ?>
+                >
+            <label>FOVISSSTE</label>
+        </div> 
+        <div>
+            <input 
+                type="checkbox" 
+                name="metodosventa[infonavit]" 
+                value="1"
+                <?php echo $metodosVenta->infonavit==1 ? 'checked' : '' ; ?>
+                >
+            <label>INFONAVIT</label>
+        </div> 
+        <div>
+            <input 
+                type="checkbox" 
+                name="metodosventa[credito]" 
+                value="1"
+                <?php echo $metodosVenta->credito==1 ? 'checked' : '' ; ?>
+                >
+            <label>Credito bancario</label>
+        </div> 
+        <div>
+            <input 
+                type="checkbox" 
+                name="metodosventa[efectivo]" 
+                value="1"
+                <?php echo $metodosVenta->efectivo==1 ? 'checked' : '' ; ?>
+                >
+            <label>Efectivo</label>
+        </div> 
+        <?php echo isset($erroresMetodosVenta["metodosVenta"]) ? "<p>".$erroresMetodosVenta["metodosVenta"]."</p>" : "" ?>
+    </div>
+    <p style="color:black">(puede marcar más de una opción)</p>
+</fieldset>
+
+<fieldset id="fieldSetPredio">
+    <legend>Número de predio</legend>
+    <div>
+        <label for="numPredio">Número de predio</label>
+        <input 
+            type="text" 
+            placeholder="ejem: 03840546028-8" 
+            id="numPredio" 
+            min="1" 
+            name="propiedad[numPredio]"
+            value="<?php echo s($propiedad->numPredio); ?>"
+        >
+        <?php echo isset($erroresPropiedad["numPredio"]) ? "<p>".$erroresPropiedad["numPredio"]."</p>" : "" ?>
+    </div>
 </fieldset>

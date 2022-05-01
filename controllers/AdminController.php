@@ -1,116 +1,126 @@
 <?php
 
 namespace Controllers;
+
 use MVC\Router;
 
+use Model\Propiedad;
+use Model\Direccion;
+use Model\Usuario;
+use Model\Citas;
+use Model\Venta;
+use Model\Mueble;
+use Model\Amenidad;
+use Model\MetodosVenta;
+
+require_once '../Router.php';
+
+require_once '../models/Propiedad.php';
+require_once '../models/Direccion.php';
+require_once '../models/Citas.php';
+require_once '../models/Usuario.php';
+require_once '../models/Mueble.php';
+require_once '../models/Amenidad.php';
+require_once '../models/MetodosVenta.php';
+
+//CONTROLADOR CONCLUIDO
 class AdminController{
     
-    //funciones para las paginas de las propiedades
-    public static function index(Router $router){
-        
-        $router->view('admin/propiedades/lista',[
-
-        ]);
-    }
-
-    public static function createHouse(Router $router){
-        $router->view('admin/propiedades/create',[
-
-        ]);
-
-    }
-
-    public static function updateHouse(Router $router){
-        $router->view('admin/propiedades/update',[
-
-        ]);
-    }
-
-    // public static function deleteHouse(Router $router){
-    //     $router->view('admin/propiedades/create',[
-
-    //     ]);
-    // }
-
-    public static function infoHouse(Router $router){
-        $router->view('admin/propiedades/info',[
-
-        ]);
-    }
-
-    public static function dateHouse(Router $router){
-        $router->view('admin/propiedades/visita',[
-
-        ]);
-    }
-
-    public static function sellHouse(Router $router){
-        $router->view('admin/propiedades/sell',[
-
-        ]);
-    }
-
-    //funciones para las paginas de los agentes inmobiliarios
-    public static function agents(Router $router){
-        $router->view('admin/agentes/lista',[
-
-        ]);
-    }
-
-    public static function createAgent(Router $router){
-        $router->view('admin/agentes/create',[
-
-        ]);
-    }
-
-    public static function updateAgent(Router $router){
-        $router->view('admin/agentes/update',[
-
-        ]);
-    }
-
-    // public static function deleteAgent(Router $router){
-    //     $router->view('admin/agentes/delete',[
-
-    //     ]);
-    // }
-
-    //funciones para las paginas de los vendedores
-    public static function sellers(Router $router){
-        $router->view('admin/vendedores/lista',[
-
-        ]);
-    }
-
-    public static function createSeller(Router $router){
-        $router->view('admin/vendedores/create',[
-
-        ]);
-    }
-
-    public static function updateSeller(Router $router){
-        $router->view('admin/vendedores/update',[
-
-        ]);
-    }
-
-    // public static function deleteSeller(Router $router){
-    //     $router->view('admin/vendedores/delete',[
-
-    //     ]);
-    // }
-
-    //funciones para la parte de ganancias
+    //funcion para la parte de ganancias
     public static function money(Router $router){
-        $router->view('admin/ganancias/lista',[
 
+        if($_SESSION['nivel']==1){
+            $ventas = Venta::all();
+        }
+        elseif($_SESSION['nivel']==2){
+            $usuarios = Usuario::whereAll('idCreador',$_SESSION['id']);
+            // debuguear($usuarios);
+            
+            $ventas[]= Venta::where('idEncargado',$_SESSION['id']);
+            foreach ($usuarios as $key) {
+                $ventas[]= Venta::where('idEncargado',$key->id);
+            }
+        }
+
+        // debuguear($ventas);
+        $propiedades = Propiedad::all();
+        $direcciones = Direccion::all();
+        $trabajadores = Usuario::all();
+
+
+
+        $router->view('admin/ganancias/lista',[
+            'ventas'=>$ventas,
+            'propiedades'=>$propiedades,
+            'direcciones'=>$direcciones,
+            'trabajadores'=>$trabajadores
         ]);
     }
 
-    //funciones para la parte de citas
+    //funcion para la parte de citas
     public static function dates(Router $router){
-        $router->view('admin/citas/lista',[
 
+        
+
+        if ($_SERVER['REQUEST_METHOD']  === 'POST') {
+            // debuguear($_POST);
+            $filtro = $_POST['filtro'];
+
+            if($_SESSION['nivel']==1){
+                $citas = Citas::filter($filtro, $_SESSION['id']);
+            }
+            // elseif($_SESSION['nivel']==2){
+            //     $usuarios = Usuario::whereAll('idCreador',$_SESSION['id']);
+            //     // debuguear($usuarios);
+            //     $citas[]= Citas::where('idEncargado',$_SESSION['id']);
+            //     foreach ($usuarios as $key) {
+            //         $citas[]= Citas::where('idEncargado',$key->id);
+            //     }
+
+            //     $propiedades = Propiedad::filter($filtro ,$_SESSION['id']);
+            // }
+        }
+
+        else{
+            if($_SESSION['nivel']==1){
+                $citas = Citas::all();
+            }
+            elseif($_SESSION['nivel']==2){
+                $usuarios = Usuario::whereAll('idCreador',$_SESSION['id']);
+                // debuguear($usuarios);
+                $citas[]= Citas::where('idEncargado',$_SESSION['id']);
+                foreach ($usuarios as $key) {
+                    $citas[]= Citas::where('idEncargado',$key->id);
+                }
+            }
+        }
+
+
+
+        
+        $propiedades = Propiedad::all();
+        $direcciones = Direccion::all();
+        $trabajadores = Usuario::all();
+        $router->view('admin/citas/lista',[
+            "citas"=>$citas,
+            "direcciones"=>$direcciones,
+            "propiedades"=>$propiedades,
+            "trabajadores"=>$trabajadores
+        ]);
+    }
+
+    public static function excel(Router $router){
+        $propiedades = Propiedad::all();
+        $direcciones = Direccion::all();
+        $muebles = Mueble::all();
+        $amenidades = Amenidad::all();
+        $metodosVenta = MetodosVenta::all();
+        $router->view('../views/generarExcel',[
+            "propiedades"=>$propiedades,
+            "direcciones"=>$direcciones,
+            "muebles"=>$muebles,
+            "amenidades"=>$amenidades,
+            "metodosVenta"=>$metodosVenta
         ]);
     }
 }

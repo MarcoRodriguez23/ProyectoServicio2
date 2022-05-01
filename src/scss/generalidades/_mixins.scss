@@ -22,29 +22,14 @@
     grid-template-columns: repeat($columnas, 1fr);
 }
 
-@mixin boton($color){
-    background-color: $color;
-    border: none;
-    color: $negro;
-    border-radius: 0.5rem;
-    font-weight: $bold;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    font-size: 1.2rem;
-    display: inline;
-    width: auto;
-    height: 3rem;
-    
-    &:hover{
-        cursor: pointer;
-    }
-}
-
-@mixin transicionBotones($colorIntenso){
-    transition: all 0.6s ease;
-    &:hover{
-        background-color: $colorIntenso;
-        color: $blanco-gris;
-    }
-}
+// @mixin boton(){
+//     border: none;
+//     color: $blanco;
+//     font-weight: $bold;
+//     text-decoration: none;
+//     padding: 1rem 3rem;
+//     text-align: center;
+//     margin-top: $separacion / 2;
+//     border-radius: 0.5rem;
+//     // display: display;
+// }

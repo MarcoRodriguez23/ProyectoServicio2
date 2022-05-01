@@ -3,8 +3,8 @@
 namespace MVC;
 
 class Router{
-    public $rutasGET=[];
-    public $rutasPOST=[];
+    public array $rutasGET=[];
+    public array $rutasPOST=[];
     
     public function get($url, $fn){
         $this->rutasGET[$url]=$fn;
@@ -15,27 +15,32 @@ class Router{
     }
 
     public function comprobarRutas(){
-        // session_start();
-
-        // $auth= $_SESSION['login']??null;
-
-        // //arreglo de rutas protegidas
-        // $rutas_protegidas=['/admin','propiedades/crear','propiedades/actualizar','propiedades/eliminar','vendedores/crear','vendedores/actualizar','vendedores/eliminar'];
+        session_start();
+        $auth= $_SESSION['login']??null;
         
-        $urlActual =  $_SERVER['PATH_INFO']?? '/';
+        //arreglo de rutas protegidas
+        $rutas_protegidas=['/admin','propiedades/crear','propiedades/actualizar','propiedades/eliminar','vendedores/crear','vendedores/actualizar','vendedores/eliminar'];
+
+        
+        
+        //CAMBIAR PATH_INFO POR REQUEST_URI AL PASAR A HEROKU
+        $urlActual =  ($_SERVER['REQUEST_URI']==='')?'/': $_SERVER['REQUEST_URI'];
         $metodo = $_SERVER['REQUEST_METHOD'];
         
-        if($metodo === 'GET'){
-            $fn = $this->rutasGET[$urlActual]??null;
-        }
-        else{
-            $fn = $this->rutasPOST[$urlActual]??null;
+        //dividimos la URL actual cada vez que exista un '?' eso indica que se están pasando variables por la url
+        $splitURL = explode('?', $urlActual);
+        // debuguear($splitURL);
+        
+        if ($metodo === 'GET') {
+            $fn = $this->rutasGET[$splitURL[0]] ?? null; //$splitURL[0] contiene la URL sin variables 
+        } else {
+        $fn = $this->rutasPOST[$splitURL[0]] ?? null;
         }
 
-        // //protegiendo rutas
-        // if(in_array($urlActual, $rutas_protegidas) && !$auth){
-        //     header('Location: /');
-        // }
+        //protegiendo rutas
+        if(in_array($urlActual, $rutas_protegidas) && !$auth){
+            header('Location: /');
+        }
 
 
         if($fn){
@@ -61,12 +66,14 @@ class Router{
         $contenido = ob_get_clean();
         
         // session_start();
-        
-        if (session_status()===2) {
-            include __DIR__ . "/views/layoutAdmin.php";
+
+        $auth= $_SESSION['login']??null;
+
+        if(!$auth){
+            include __DIR__ . "/views/layout.php";
         }
         else{
-            include __DIR__ . "/views/layoutUser.php";
+            include __DIR__ . "/views/layoutAdmin.php";
         }
         
     }
